@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Linkedin, Github } from 'lucide-react';
-import { FaTiktok, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaTiktok, FaInstagram } from 'react-icons/fa';
 import Button from '../UI/Button';
 
 const ContatoSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
-    subject: '',
+    email: '',
     message: ''
   });
 
@@ -17,25 +17,25 @@ const ContatoSection: React.FC = () => {
     });
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aqui você pode adicionar a lógica de envio do formulário
+    console.log('Formulário enviado:', formData);
+    // Resetar formulário
+    setFormData({ name: '', email: '', message: '' });
+  };
+
   return (
     <section id="contato" className="contato-section">
       <div className="contato-container">
         <h2 className="contato-title">Vamos conversar sobre seu próximo projeto</h2>
         <p className="contato-subtitle">Estou pronto para transformar suas ideias em realidade. Entre em contato e vamos criar algo incrível juntos.</p>
-
+        
         <div className="contato-grid">
           {/* Card de Formulário */}
           <div className="contato-form-card">
             <h3 className="contato-form-title">Envie uma Mensagem</h3>
-            <form
-              action={`https://formsubmit.co/${import.meta.env.VITE_CONTACT_EMAIL}`}
-              method="POST"
-              className="contato-form"
-            >
-              {/* Campos ocultos do FormSubmit */}
-              <input type="hidden" name="_next" value={window.location.href} />
-              <input type="hidden" name="_captcha" value="false" />
-
+            <form onSubmit={handleSubmit} className="contato-form">
               <div className="form-group">
                 <label htmlFor="name">Nome</label>
                 <input
@@ -48,20 +48,20 @@ const ContatoSection: React.FC = () => {
                   placeholder="Seu nome completo"
                 />
               </div>
-
+              
               <div className="form-group">
-                <label htmlFor="subject">Assunto</label>
+                <label htmlFor="email">Email</label>
                 <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="Assunto da mensagem"
+                  placeholder="seu@email.com"
                 />
               </div>
-
+              
               <div className="form-group">
                 <label htmlFor="message">Mensagem</label>
                 <textarea
@@ -74,7 +74,7 @@ const ContatoSection: React.FC = () => {
                   placeholder="Conte-me sobre seu projeto..."
                 />
               </div>
-
+              
               <Button variant="primary" type="submit">
                 Enviar Mensagem
               </Button>
@@ -84,7 +84,7 @@ const ContatoSection: React.FC = () => {
           {/* Card de Informações */}
           <div className="contato-info-card">
             <h3 className="contato-info-title">Informações de Contato</h3>
-
+            
             <div className="contato-info-list">
               <div className="contato-info-item">
                 <div className="contato-info-icon">
@@ -92,7 +92,7 @@ const ContatoSection: React.FC = () => {
                 </div>
                 <div className="contato-info-content">
                   <h4>Email</h4>
-                  <a href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`}>{import.meta.env.VITE_CONTACT_EMAIL}</a>
+                  <a href="mailto:pedro.vvviana@gmail.com">pedro.vvviana@gmail.com</a>
                 </div>
               </div>
 
@@ -130,21 +130,21 @@ const ContatoSection: React.FC = () => {
             <div className="contato-social">
               <h4>Redes Sociais</h4>
               <div className="contato-social-links">
-                <a href="https://www.linkedin.com/in/pedro-vanlume-0230551b9/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
                   <Linkedin />
                   <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/PedroVViana" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
                   <Github />
                   <span>GitHub</span>
                 </a>
-                <a href="https://www.tiktok.com/@devlume__" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-link">
                   <FaTiktok />
                   <span>TikTok</span>
                 </a>
-                <a href="https://wa.me/5581994952030" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <FaWhatsapp />
-                  <span>WhatsApp</span>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FaInstagram />
+                  <span>Instagram</span>
                 </a>
               </div>
             </div>
@@ -156,3 +156,4 @@ const ContatoSection: React.FC = () => {
 };
 
 export default ContatoSection;
+

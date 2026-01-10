@@ -300,6 +300,10 @@
     min-height: 80vh;
   }
 
+  .presentation-container {
+    gap: 2rem;
+  }
+
   .presentation-image-glow {
     width: 240px;
     height: 240px;
@@ -336,3 +340,58 @@
   }
 }
 
+@media (max-width: 480px) {
+  .presentation {
+    padding: 2rem 1rem;
+  }
+
+  .presentation-container {
+    gap: 1.5rem;
+  }
+
+  .presentation-image-glow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .presentation-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .presentation-stats {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .presentation-stat-card {
+    padding: 0.875rem 0.625rem;
+    min-width: 90px;
+    flex: 1;
+  }
+
+  .presentation-stat-number {
+    font-size: 1.25rem;
+  }
+
+  .presentation-stat-label {
+    font-size: 0.65rem;
+  }
+
+  .presentation-title {
+    font-size: 1.5rem;
+  }
+
+  .presentation-text {
+    font-size: 0.875rem;
+  }
+
+  .presentation-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .presentation-buttons button {
+    width: 100%;
+  }
+}

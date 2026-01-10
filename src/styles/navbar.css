@@ -207,3 +207,24 @@
   }
 }
 
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.75rem;
+  }
+
+  .navbar-logo {
+    font-size: 1.25rem;
+  }
+
+  .navbar-fixed .navbar-toggle {
+    top: 0.25rem;
+    right: 0.75rem;
+  }
+
+  .navbar-menu button {
+    max-width: 280px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin: 0.4rem 0;
+  }
+}

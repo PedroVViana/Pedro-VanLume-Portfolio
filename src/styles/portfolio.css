@@ -153,6 +153,14 @@
     padding: 3rem 1.5rem;
   }
 
+  .portfolio-title {
+    font-size: 1.75rem;
+  }
+
+  .portfolio-subtitle {
+    font-size: 1rem;
+  }
+
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -179,3 +187,45 @@
   }
 }
 
+@media (max-width: 480px) {
+  .portfolio-section {
+    padding: 2rem 1rem;
+  }
+
+  .portfolio-title {
+    font-size: 1.5rem;
+  }
+
+  .portfolio-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .portfolio-grid {
+    gap: 1.5rem;
+  }
+
+  .portfolio-image-wrapper {
+    height: 240px;
+  }
+
+  .portfolio-content {
+    padding: 1.25rem;
+  }
+
+  .portfolio-card-title {
+    font-size: 1.25rem;
+  }
+
+  .portfolio-card-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .portfolio-card-description {
+    font-size: 0.875rem;
+  }
+
+  .portfolio-tech-tag {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+}

@@ -329,3 +329,48 @@
   }
 }
 
+@media (max-width: 480px) {
+  .servicos-section {
+    padding: 2rem 1rem;
+  }
+
+  .servicos-title {
+    font-size: 1.5rem;
+  }
+
+  .servicos-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .servico-card {
+    padding: 1.5rem;
+  }
+
+  .servico-card-header {
+    gap: 0.75rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .servico-card-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .servico-card-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .servico-card-title {
+    font-size: 1rem;
+  }
+
+  .servico-card-subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .servico-card-description {
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+  }
+}
