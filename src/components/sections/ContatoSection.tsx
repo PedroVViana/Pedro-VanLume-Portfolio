@@ -35,7 +35,7 @@ const ContatoSection: React.FC = () => {
           {/* Card de Formulário */}
           <div className="contato-form-card">
             <h3 className="contato-form-title">Envie uma Mensagem</h3>
-            <form onSubmit={handleSubmit} className="contato-form">
+            <form onSubmit={handleSubmit} action="https://formsubmit.co/pedro.vvviana@gmail.com" method="POST" className="contato-form">
               <div className="form-group">
                 <label htmlFor="name">Nome</label>
                 <input

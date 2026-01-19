@@ -8,6 +8,7 @@
 @import './styles/servicos.css';
 @import './styles/contato.css';
 @import './styles/portfolio.css';
+@import './styles/whatsappButton.css';
 
 @tailwind base;
 @tailwind components;
