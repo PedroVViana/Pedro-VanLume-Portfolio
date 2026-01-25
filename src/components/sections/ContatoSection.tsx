@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Linkedin, Github } from 'lucide-react';
-import { FaTiktok, FaInstagram } from 'react-icons/fa';
+import { Mail, Phone, MapPin, Clock, Linkedin, Github, BookOpen } from 'lucide-react';
+import { FaInstagram } from 'react-icons/fa';
 import Button from '../UI/Button';
 
 const ContatoSection: React.FC = () => {
@@ -130,19 +130,19 @@ const ContatoSection: React.FC = () => {
             <div className="contato-social">
               <h4>Redes Sociais</h4>
               <div className="contato-social-links">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://www.linkedin.com/in/pedro-vanlume-0230551b9/" target="_blank" rel="noopener noreferrer" className="social-link">
                   <Linkedin />
                   <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://github.com/PedroVViana" target="_blank" rel="noopener noreferrer" className="social-link">
                   <Github />
                   <span>GitHub</span>
                 </a>
-                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <FaTiktok />
-                  <span>TikTok</span>
+                <a href="https://devlumeblogs.com/" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <BookOpen />
+                  <span>Blog</span>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://www.instagram.com/devlume__?igsh=MTBuZHZ3Y3ZkYWZpdA==" target="_blank" rel="noopener noreferrer" className="social-link">
                   <FaInstagram />
                   <span>Instagram</span>
                 </a>
