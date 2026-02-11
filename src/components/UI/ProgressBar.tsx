@@ -8,12 +8,12 @@ const ProgressBar: React.FC = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      
+
       const totalScrollableHeight = documentHeight - windowHeight;
-      const progress = totalScrollableHeight > 0 
-        ? (scrollTop / totalScrollableHeight) * 100 
+      const progress = totalScrollableHeight > 0
+        ? (scrollTop / totalScrollableHeight) * 100
         : 0;
-      
+
       setScrollProgress(Math.min(progress, 100));
     };
 
@@ -26,9 +26,9 @@ const ProgressBar: React.FC = () => {
   }, []);
 
   return (
-    <div className="progress-bar-container">
-      <div 
-        className="progress-bar-fill" 
+    <div className="fixed top-0 left-0 w-full h-0.5 z-[110] bg-transparent pointer-events-none">
+      <div
+        className="h-full bg-gradient-to-r from-apple-accent-blue to-apple-accent-purple transition-all duration-150 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>

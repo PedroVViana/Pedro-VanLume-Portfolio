@@ -1,8 +1,44 @@
 :root {
-  --color-primary-purple: #8c52ff;
-  --color-primary-blue: #5271ff;
-  --color-neutral-dark: #333;
-  --color-neutral-white: #fff;
-  --color-neutral-light: #ededed;
-}
+  /* Cores Base */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F7;
 
+  /* Texto */
+  --color-text-primary: #1D1D1F;
+  --color-text-secondary: #86868B;
+  --color-text-tertiary: #A1A1A6;
+
+  /* Acentos */
+  --color-accent-purple: #8c52ff;
+  --color-accent-blue: #0071E3;
+  --color-accent-purple-light: rgba(140, 82, 255, 0.1);
+  --color-accent-blue-light: rgba(0, 113, 227, 0.1);
+
+  /* UI Elements */
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-glass: rgba(255, 255, 255, 0.72);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  /* Spacing & Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Aurora Fallbacks */
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+  --blue-500: #3b82f6;
+  --indigo-300: #a5b4fc;
+  --blue-300: #93c5fd;
+  --violet-200: #ddd6fe;
+  --blue-400: #60a5fa;
+
+  /* Navbar height constant */
+  --navbar-height: 64px;
+}

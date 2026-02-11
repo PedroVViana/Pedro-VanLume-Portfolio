@@ -1,109 +1,117 @@
 import React from 'react';
-import { Wrench, Globe, Zap, ShoppingCart, Code } from 'lucide-react';
-import Button from '../UI/Button';
+import { Code2, ShoppingCart, Zap, LayoutTemplate, Wrench } from 'lucide-react';
+import Section from '../ui/Section';
+import Container from '../ui/Container';
+import Card from '../ui/Card';
 
 interface Service {
   id: number;
   title: string;
-  subtitle: string;
+  micro: string;
   description: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ElementType;
 }
 
+const services: Service[] = [
+  {
+    id: 1,
+    title: 'Soluções Corporativas',
+    micro: 'SISTEMAS WEB SOB MEDIDA',
+    description: 'Dashboards, CRMs e ERPs com foco em eficiência operacional e escalabilidade.',
+    icon: Code2,
+  },
+  {
+    id: 2,
+    title: 'E-commerce & Vendas',
+    micro: 'LOJAS DE ALTA CONVERSÃO',
+    description: 'E-commerces rápidos, seguros e otimizados para vender mais.',
+    icon: ShoppingCart,
+  },
+  {
+    id: 3,
+    title: 'Automação Inteligente',
+    micro: 'PROCESSOS QUE TRABALHAM POR VOCÊ',
+    description: 'Integrações e automações via APIs para reduzir tarefas repetitivas.',
+    icon: Zap,
+  },
+  {
+    id: 4,
+    title: 'Landing Pages & Performance',
+    micro: 'PÁGINAS QUE CONVERTEM',
+    description: 'LPs com SEO, velocidade e copy orientada a resultados.',
+    icon: LayoutTemplate,
+  },
+  {
+    id: 5,
+    title: 'Manutenção & Suporte',
+    micro: 'EVOLUÇÃO CONTÍNUA',
+    description: 'Correções, melhorias e monitoramento para manter tudo estável.',
+    icon: Wrench,
+  },
+];
+
 const ServicosSection: React.FC = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contato');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const scrollToContactAndFocusName = () => {
+    const section = document.getElementById('contato');
+    const nameInput = document.getElementById('contact-name') as HTMLInputElement | null;
+    if (section) {
+      const offset = 80;
+      const top = section.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      setTimeout(() => nameInput?.focus({ preventScroll: true }), 400);
     }
-  };
-
-  const services: Service[] = [
-    {
-      id: 1,
-      title: 'Manutenção e Suporte',
-      subtitle: 'Seu sistema sempre funcionando perfeitamente',
-      description: 'Garanta que seu site ou sistema esteja sempre atualizado, seguro e funcionando sem interrupções. Ofereço suporte técnico contínuo, correções rápidas e atualizações preventivas para evitar problemas antes que aconteçam. Mantenha sua operação rodando 24/7 sem preocupações.',
-      icon: Wrench
-    },
-    {
-      id: 2,
-      title: 'Desenvolvimento de Sites',
-      subtitle: 'Presença digital que converte visitantes em clientes',
-      description: 'Crie um site moderno, responsivo e otimizado que realmente funciona para o seu negócio. Desenvolvo sites que não apenas impressionam visualmente, mas que carregam rápido, aparecem no Google e convertem visitantes em clientes. Do design à publicação, tudo pensado para resultados.',
-      icon: Globe
-    },
-    {
-      id: 3,
-      title: 'Automações de Processos',
-      subtitle: 'Economize tempo e reduza erros com automação inteligente',
-      description: 'Transforme tarefas repetitivas em processos automatizados que trabalham por você. Desenvolvo soluções que integram sistemas, eliminam trabalho manual e reduzem custos operacionais. Mais eficiência, menos erros e mais tempo para focar no que realmente importa no seu negócio.',
-      icon: Zap
-    },
-    {
-      id: 4,
-      title: 'E-commerces',
-      subtitle: 'Venda online com uma plataforma que realmente converte',
-      description: 'Monte sua loja virtual completa com carrinho, pagamentos, gestão de estoque e painel administrativo. Desenvolvo e-commerces seguros, rápidos e otimizados para vendas, com integração de gateways de pagamento e sistemas de entrega. Transforme visitantes em compradores recorrentes.',
-      icon: ShoppingCart
-    },
-    {
-      id: 5,
-      title: 'Sistemas Web',
-      subtitle: 'Soluções personalizadas que resolvem problemas reais',
-      description: 'Desenvolvo sistemas web completos sob medida para as necessidades específicas do seu negócio. Desde CRMs e painéis administrativos até plataformas complexas com múltiplos módulos. Arquitetura sólida, interface intuitiva e performance que suporta crescimento. Soluções que realmente resolvem problemas e geram resultados mensuráveis.',
-      icon: Code
-    }
-  ];
-
-  const renderServiceCard = (service: Service, cardClass?: string) => {
-    const IconComponent = service.icon;
-    return (
-      <div key={service.id} className={`servico-card ${cardClass || ''}`}>
-        <div className="servico-card-header">
-          <div className="servico-card-icon">
-            <IconComponent />
-          </div>
-          <div className="servico-card-header-text">
-            <h3 className="servico-card-title">{service.title}</h3>
-            <p className="servico-card-subtitle">{service.subtitle}</p>
-          </div>
-        </div>
-        <p className="servico-card-description">{service.description}</p>
-        <div className="servico-card-button">
-          <Button variant="primary" onClick={scrollToContact}>
-            Entrar em Contato
-          </Button>
-        </div>
-      </div>
-    );
   };
 
   return (
-    <section id="servicos" className="servicos-section">
-      <div className="servicos-container">
-        <div className="servicos-grid">
-          {/* Coluna esquerda - 2 cards em coluna */}
-          <div className="servicos-left-column">
-            {renderServiceCard(services[0], 'servico-card-1')}
-            {renderServiceCard(services[1], 'servico-card-2')}
-          </div>
+    <Section id="servicos" className="bg-[var(--color-bg-primary)]">
+      <Container>
+        <header className="mb-12 md:mb-16 max-w-3xl">
+          <p className="text-[var(--color-accent-purple)] font-semibold text-xs tracking-[0.2em] uppercase mb-3">
+            O QUE FAÇO
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] tracking-tight mb-4">
+            Serviços & Soluções
+          </h2>
+          <p className="text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed">
+            Construo produtos digitais com foco em performance, UX e escala.
+          </p>
+        </header>
 
-          {/* Box direito - 2 cards em linha no topo e card 5 abaixo */}
-          <div className="servicos-right-section">
-            <div className="servicos-right-box">
-              {renderServiceCard(services[2], 'servico-card-3')}
-              {renderServiceCard(services[3], 'servico-card-4')}
-            </div>
-            <div className="servicos-bottom-card">
-              {renderServiceCard(services[4], 'servico-card-5')}
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <Card
+                key={service.id}
+                hoverable={false}
+                className="p-8 flex flex-col h-full bg-white border border-[var(--color-border)] rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] transition-all duration-200 ease-out hover:shadow-[var(--shadow-md)] hover:-translate-y-0.5 hover:border-[rgba(0,0,0,0.12)]"
+              >
+                <div className="w-10 h-10 rounded-[var(--radius-sm)] flex items-center justify-center mb-6 text-[var(--color-accent-purple)] bg-[var(--color-accent-purple-light)]">
+                  <Icon size={22} strokeWidth={1.8} />
+                </div>
+                <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-1">
+                  {service.title}
+                </h3>
+                <p className="text-xs font-semibold text-[var(--color-text-tertiary)] uppercase tracking-wider mb-3">
+                  {service.micro}
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-8 flex-grow">
+                  {service.description}
+                </p>
+                <button
+                  type="button"
+                  onClick={scrollToContactAndFocusName}
+                  className="mt-auto text-xs font-bold uppercase tracking-widest text-[var(--color-accent-purple)] hover:text-[var(--color-text-primary)] transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-purple)] focus-visible:ring-offset-2 rounded"
+                >
+                  SOLICITAR ORÇAMENTO →
+                </button>
+              </Card>
+            );
+          })}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 
 export default ServicosSection;
-

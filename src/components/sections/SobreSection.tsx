@@ -5,11 +5,11 @@ import Experience from './sobre/Experience';
 
 const SobreSection: React.FC = () => {
   return (
-    <section id="sobre" className="sobre-section">
+    <div id="sobre">
       <Presentation />
       <Experience />
       <TechSkills />
-    </section>
+    </div>
   );
 };
 

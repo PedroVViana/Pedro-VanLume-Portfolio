@@ -1,73 +1,101 @@
 import React from 'react';
-import Button from '../UI/Button';
-import avatarImage from '../../assets/avatar.png';
-import AnimatedBackground from '../UI/AnimatedBackground';
-import ScrollIndicator from '../UI/ScrollIndicator';
+import { motion, Variants } from 'framer-motion';
+import { ProjectButton } from '@/components/ui/project-button';
+import { GetStartedButton } from '@/components/ui/get-started-button';
+import { AuroraBackground } from '@/components/ui/aurora-background';
+import LocationBadge from '@/components/ui/LocationBadge';
+import Container from '@/components/ui/Container';
+import Section from '@/components/ui/Section';
 
 const HomeSection: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const offset = 64;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
     }
   };
 
   return (
-    <section 
-      id="home" 
-      className="h-screen w-full flex items-start justify-center bg-neutral-white px-4 pt-8 md:pt-12 relative overflow-hidden"
-    >
-      <AnimatedBackground />
-      <div className="max-w-7xl w-full mx-auto relative z-10 pt-2 md:pt-4">
-        <div className="flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-12">
-          <div className="flex-1 space-y-2 md:space-y-3 animate-fade-in">
-            <div className="space-y-1 sm:space-y-0">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold leading-tight">
-                <span className="text-gradient text-xl sm:text-2xl md:text-3xl lg:text-4xl sm:whitespace-nowrap">
-                  Desenvolvimento Fullstack & Design
+    <Section id="home" spacing="none" className="min-h-screen overflow-hidden relative">
+      <AuroraBackground className="h-screen w-full pt-[var(--navbar-height)]">
+        <Container className="flex-1 flex flex-col items-center justify-center relative z-30 py-12">
+          <motion.div
+            className="max-w-4xl w-full flex flex-col items-center text-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Bloco Superior de Contexto (Header da Hero) */}
+            <motion.div variants={itemVariants} className="flex flex-col items-center gap-4 mb-14">
+              <LocationBadge />
+              <div className="flex flex-col items-center">
+                <span className="text-apple-accent-purple font-bold text-[11px] sm:text-[12px] tracking-[0.4em] uppercase">
+                  Freelancer / Disponível para Projetos
                 </span>
-                <br/> 
-                <span className="text-primary-blue text-base sm:text-lg md:text-xl lg:text-2xl">para produtos digitais escaláveis e bem construídos.</span>
-              </h1>
-            </div>
-            
-            <div className="divider-gradient"></div>
-            
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-dark/80 leading-relaxed max-w-2xl font-light">
-              Desenvolvo aplicações completas — do front ao back — unindo arquitetura sólida, UX clara e performance. Interfaces modernas, APIs eficientes e experiências digitais bem estruturadas.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
-              <Button 
-                variant="primary"
-                onClick={() => scrollToSection('portfolio')}
-              >
-                Portfolio
-              </Button>
-              <Button 
-                variant="secondary"
-                onClick={() => scrollToSection('contato')}
-              >
-                Fale Comigo
-              </Button>
-            </div>
-          </div>
-          
-          <div className="flex-shrink-0 lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="hero-avatar overflow-hidden shadow-lg">
-              <img 
-                src={avatarImage} 
-                alt="Avatar" 
-                className="w-full max-w-xs lg:max-w-sm h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <ScrollIndicator />
-    </section>
+                <div className="h-[1.5px] w-10 bg-apple-accent-blue/20 mt-3" />
+              </div>
+            </motion.div>
+
+            {/* Headline Monumental Style Apple */}
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-apple-text-primary tracking-tight leading-[0.95] mb-8"
+            >
+              Engenharia de <br />
+              <span className="text-apple-accent-purple">Software</span> & UX
+            </motion.h1>
+
+            {/* Subheadline Elegante */}
+            <motion.p
+              variants={itemVariants}
+              className="text-lg sm:text-xl md:text-2xl text-apple-text-secondary leading-relaxed max-w-2xl mb-12 font-medium"
+            >
+              Desenvolvo produtos digitais de alta performance, unindo arquitetura robusta a experiências de usuário fluidas.
+            </motion.p>
+
+            {/* CTAs com Estilo Refinado */}
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 relative z-[100]"
+            >
+              <ProjectButton onClick={() => scrollToSection('portfolio')} />
+
+              <GetStartedButton onClick={() => scrollToSection('contato')} />
+            </motion.div>
+          </motion.div>
+        </Container>
+      </AuroraBackground>
+    </Section>
   );
 };
 
 export default HomeSection;
-
