@@ -6,6 +6,7 @@ import { DownloadButton } from '@/components/ui/download-button';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import avatarImage from '@/assets/avatar.png';
+import resumePDF from '@/assets/resume-Pedro-Vanlume.pdf';
 
 const Presentation: React.FC = () => {
   const [showButtons, setShowButtons] = useState(false);
@@ -29,6 +30,15 @@ const Presentation: React.FC = () => {
         behavior: 'smooth'
       });
     }
+  };
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = resumePDF;
+    link.download = 'CV-Pedro-Van-Lume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -94,7 +104,7 @@ const Presentation: React.FC = () => {
               />
               <DownloadButton
                 text="Download CV"
-                onClick={() => window.open('/cv.pdf', '_blank')}
+                onClick={handleDownloadCV}
               />
             </div>
           </div>
