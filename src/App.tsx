@@ -3,9 +3,9 @@ import SobreSection from './components/sections/SobreSection';
 import PortfolioSection from './components/sections/PortfolioSection';
 import ServicosSection from './components/sections/ServicosSection';
 import ContatoSection from './components/sections/ContatoSection';
-import ProgressBar from './components/ui/ProgressBar';
-import Navbar from './components/ui/Navbar';
-import WhatsAppButton from './components/ui/WhatsAppButton';
+import ProgressBar from './components/ui/ProgressBar.tsx';
+import Navbar from './components/ui/Navbar.tsx';
+import WhatsAppButton from './components/ui/WhatsAppButton.tsx';
 
 function App() {
   return (
