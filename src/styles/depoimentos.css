@@ -1,0 +1,114 @@
+/* Depoimentos Section — cards com aspas, animação de entrada */
+
+.depoimentos__header {
+  margin-bottom: 3rem;
+  max-width: 42rem;
+}
+
+.depoimentos__eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent-purple);
+  margin-bottom: 0.75rem;
+}
+
+.depoimentos__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.depoimentos__description {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.depoimentos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .depoimentos__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.depoimentos__card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out,
+    box-shadow 0.25s ease,
+    border-color 0.2s ease;
+}
+
+.depoimentos--in-view .depoimentos__card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.depoimentos__card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.depoimentos__card-quote {
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.depoimentos__card-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  margin: 0 0 1.5rem;
+  font-style: normal;
+}
+
+.depoimentos__card-footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.depoimentos__card-cite {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-style: normal;
+}
+
+/* Reduced motion */
+.depoimentos--reduced-motion .depoimentos__card {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.depoimentos--reduced-motion .depoimentos__card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .depoimentos__card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

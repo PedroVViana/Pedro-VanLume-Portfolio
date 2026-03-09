@@ -6,6 +6,7 @@ import HomeSection from './components/sections/HomeSection';
 import SobreSection from './components/sections/SobreSection';
 import PortfolioSection from './components/sections/PortfolioSection';
 import ServicosSection from './components/sections/ServicosSection';
+import DepoimentosSection from './components/sections/DepoimentosSection';
 import ContatoSection from './components/sections/ContatoSection';
 
 function ScrollProgressBar() {
@@ -71,9 +72,10 @@ function Navbar() {
         </button>
         <ul className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
           <li><button onClick={() => scrollToSection('home')}>Início</button></li>
+          <li><button onClick={() => scrollToSection('servicos')}>Serviços</button></li>
           <li><button onClick={() => scrollToSection('sobre')}>A DevLume</button></li>
           <li><button onClick={() => scrollToSection('portfolio')}>Cases</button></li>
-          <li><button onClick={() => scrollToSection('servicos')}>Serviços</button></li>
+          <li><button onClick={() => scrollToSection('depoimentos')}>Depoimentos</button></li>
           <li><button onClick={() => scrollToSection('contato')}>Contato</button></li>
         </ul>
       </div>
@@ -107,9 +109,10 @@ function App() {
       <ScrollProgressBar />
       <Navbar />
       <HomeSection />
+      <ServicosSection />
       <SobreSection />
       <PortfolioSection />
-      <ServicosSection />
+      <DepoimentosSection />
       <ContatoSection />
       <WhatsAppButton />
     </div>

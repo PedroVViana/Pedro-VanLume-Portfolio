@@ -1,6 +1,7 @@
 @import './styles/colors.css';
 @import './styles/navbar.css';
 @import './styles/portfolio.css';
+@import './styles/depoimentos.css';
 
 @tailwind base;
 @tailwind components;
