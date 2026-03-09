@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Layers, Briefcase, Zap } from 'lucide-react';
 import { ProjectButton } from '@/components/ui/project-button';
 import { GetStartedButton } from '@/components/ui/get-started-button';
-import { DownloadButton } from '@/components/ui/download-button';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import avatarImage from '@/assets/avatar.png';
-import resumePDF from '@/assets/resume-Pedro-Vanlume.pdf';
 
 const Presentation: React.FC = () => {
   const [showButtons, setShowButtons] = useState(false);
@@ -32,15 +30,6 @@ const Presentation: React.FC = () => {
     }
   };
 
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = resumePDF;
-    link.download = 'CV-Pedro-Van-Lume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <Section id="sobre" spacing="none" className="bg-white py-24 sm:py-32 overflow-hidden">
       <Container>
@@ -63,18 +52,18 @@ const Presentation: React.FC = () => {
             <div className="space-y-6">
               <div className="flex flex-col items-start gap-3">
                 <span className="text-apple-accent-purple font-bold text-xs tracking-[0.2em] uppercase">
-                  Sobre Mim
+                  A DevLume
                 </span>
                 <div className="h-[1.5px] w-8 bg-apple-accent-purple/20" />
               </div>
 
               <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-apple-text-primary tracking-tight leading-[1.05]">
-                Interfaces intuitivas, <br />
-                <span className="text-apple-accent-purple">arquitetura sólida.</span>
+                Resolvemos problemas de operação <br />
+                <span className="text-apple-accent-purple">com software que gera resultado.</span>
               </h2>
 
               <p className="text-lg md:text-xl text-apple-text-secondary leading-relaxed max-w-xl font-medium">
-                Meu foco é resolver problemas complexos com simplicidade técnica. Transformo requisitos em experiências que parecem naturais para quem as usa.
+                Especializamo-nos em ferramentas que aumentam eficiência operacional: automação de prospecção e enriquecimento de dados, gestão de indicadores e produtividade, dashboards para decisão baseada em dados. Entregamos sistemas escaláveis com foco em ROI e performance.
               </p>
             </div>
 
@@ -82,7 +71,7 @@ const Presentation: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 { icon: Layers, label: 'Projetos Entregues', value: '+100', color: 'blue' },
-                { icon: Briefcase, label: 'Carreira', value: '+4 Anos', color: 'purple' },
+                { icon: Briefcase, label: 'Experiência', value: '+4 Anos', color: 'purple' },
                 { icon: Zap, label: 'PageSpeed Performance', value: '+90', color: 'blue' }
               ].map((item, idx) => (
                 <div key={idx} className="p-6 rounded-2xl bg-[#F5F5F7]/50 border border-apple-border hover:bg-white hover:shadow-apple-sm transition-all group">
@@ -99,12 +88,8 @@ const Presentation: React.FC = () => {
             <div className={`flex flex-wrap items-center gap-6 transition-all duration-700 ${showButtons ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <ProjectButton onClick={() => scrollToSection('portfolio')} />
               <GetStartedButton
-                text="Trabalhe Comigo"
+                text="Solicitar Orçamento"
                 onClick={() => scrollToSection('contato')}
-              />
-              <DownloadButton
-                text="Download CV"
-                onClick={handleDownloadCV}
               />
             </div>
           </div>

@@ -73,7 +73,7 @@ const ServicosSection: React.FC = () => {
             Serviços & Soluções
           </h2>
           <p className="text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed">
-            Construo produtos digitais com foco em performance, UX e escala.
+            Desenvolvemos sistemas e landing pages com foco em eficiência operacional, escalabilidade e retorno mensurável.
           </p>
         </header>
 

@@ -59,7 +59,7 @@ const HomeSection: React.FC = () => {
               <LocationBadge />
               <div className="flex flex-col items-center">
                 <span className="text-apple-accent-purple font-bold text-[11px] sm:text-[12px] tracking-[0.4em] uppercase">
-                  Freelancer / Disponível para Projetos
+                  Software House · Soluções sob medida
                 </span>
                 <div className="h-[1.5px] w-10 bg-apple-accent-blue/20 mt-3" />
               </div>
@@ -70,8 +70,8 @@ const HomeSection: React.FC = () => {
               variants={itemVariants}
               className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-apple-text-primary tracking-tight leading-[0.95] mb-8"
             >
-              Engenharia de <br />
-              <span className="text-apple-accent-purple">Software</span> & UX
+              Transformamos ideias <br />
+              <span className="text-apple-accent-purple">complexas em produtos</span> escaláveis
             </motion.h1>
 
             {/* Subheadline Elegante */}
@@ -79,7 +79,7 @@ const HomeSection: React.FC = () => {
               variants={itemVariants}
               className="text-lg sm:text-xl md:text-2xl text-apple-text-secondary leading-relaxed max-w-2xl mb-12 font-medium"
             >
-              Desenvolvo produtos digitais de alta performance, unindo arquitetura robusta a experiências de usuário fluidas.
+              Soluções de software sob medida para otimizar sua operação — com foco em ROI, performance e escalabilidade.
             </motion.p>
 
             {/* CTAs com Estilo Refinado */}
@@ -88,8 +88,10 @@ const HomeSection: React.FC = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 relative z-[100]"
             >
               <ProjectButton onClick={() => scrollToSection('portfolio')} />
-
-              <GetStartedButton onClick={() => scrollToSection('contato')} />
+              <GetStartedButton
+                text="Solicitar Orçamento"
+                onClick={() => scrollToSection('contato')}
+              />
             </motion.div>
           </motion.div>
         </Container>

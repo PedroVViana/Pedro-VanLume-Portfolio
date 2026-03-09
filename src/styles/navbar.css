@@ -30,6 +30,15 @@
   color: var(--color-text-primary);
   cursor: pointer;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo__img {
+  height: 2rem;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .navbar-menu {

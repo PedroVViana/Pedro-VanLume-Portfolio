@@ -26,13 +26,13 @@ interface PortfolioItem {
 }
 
 const SECTION_DESCRIPTION =
-  'Alguns dos projetos em que atuei com foco em produto, performance e experiência do usuário.';
+  'Cases reais: sistemas e landing pages que entregam eficiência operacional, decisão baseada em dados e crescimento escalável para negócios.';
 
 const portfolioData: PortfolioItem[] = [
   {
     id: 1,
     title: 'LeveProMedico',
-    description: 'Sistema de prontuário eletrônico e gestão de clínicas médicas para agendamentos e saúde digital.',
+    description: 'Eficiência operacional em clínicas: prontuário eletrônico, agendamentos e gestão de saúde digital em um único sistema.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['React', 'Node.js', 'Docker', 'Redux', 'TypeScript'],
     image: levepromedicoImage,
@@ -42,7 +42,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 2,
     title: 'Meta Ads Insights — Dashboard de BI',
-    description: 'Dashboard de BI para tráfego pago com integração de APIs e visualização de dados complexos em tempo real.',
+    description: 'Tomada de decisão baseada em dados de marketing: relatórios e métricas de tráfego pago em tempo real para otimizar investimento.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS'],
     image: metaAdsImage,
@@ -52,7 +52,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 3,
     title: 'Finely Planned — Planejamento Financeiro',
-    description: 'Dashboard de orçamento e gastos com indicadores em tempo real, comparações mensais e visão rápida do saldo disponível — feito para manter decisões simples e consistentes.',
+    description: 'Gestão de indicadores e produtividade operacional: visão clara de orçamento, gastos e saldo para decisões financeiras consistentes.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['React', 'Vite', 'TypeScript', 'Firebase', 'Redux', 'Firebase'],
     image: finelyPlannedImage,
@@ -62,7 +62,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 4,
     title: 'Texto Maestro',
-    description: 'Editor inteligente com LLMs para refinamento gramatical e estilístico de textos em português.',
+    description: 'Produtividade em conteúdo: refinamento gramatical e estilístico com IA para equipes que precisam de texto impecável em escala.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['Next.js', 'OpenAI API', 'Tailwind', 'TypeScript'],
     image: textoMaestroImage,
@@ -72,7 +72,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 5,
     title: 'EasyHub Pack',
-    description: 'Marketplace de assets digitais para criativos com checkout integrado e alta conversão.',
+    description: 'Conversão e credibilidade: marketplace de assets com checkout integrado e experiência de compra que gera confiança.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['HTML', 'CSS', 'JavaScript', 'SEO'],
     image: easyPackImage,
@@ -82,7 +82,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 6,
     title: 'Tempo Certo',
-    description: 'Ferramenta para controle rigoroso da rotina de saúde: registro de doses de medicamentos e acompanhamento de metas de hidratação com foco na facilidade de uso.',
+    description: 'Adesão e controle de rotina de saúde: registro de medicamentos e metas de hidratação para pacientes e cuidadores.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['React', 'TypeScript', 'Vite', 'Tailwind'],
     image: tempoCertoImage,
@@ -92,7 +92,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 7,
     title: 'CV-Insignes',
-    description: 'Engenharia de Prompt e IA Generativa para análise de currículos.',
+    description: 'Automação de prospecção e enriquecimento de dados: análise de currículos com IA para recrutamento e matching assertivo.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['Next.js', 'React', 'TypeScript', 'IA Generativa', 'Tailwind'],
     image: cvInsignesImage,
@@ -102,8 +102,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 8,
     title: 'Clínica Fluxo',
-    description:
-      'Refatoração completa da presença digital da Clínica Fluxo, com design minimalista e sofisticado para elevar a percepção de valor da marca.',
+    description: 'Posicionamento de marca e conversão: presença digital minimalista que eleva a percepção de valor e gera agendamentos.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['HTML', 'CSS', 'JavaScript', 'SEO', 'GSAP'],
     image: clinicaFluxoImage,
@@ -113,8 +112,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 9,
     title: 'Borges Tennis Academy',
-    description:
-      'Site institucional para uma academia de tênis na Flórida, com foco em autoridade, programas e captação de leads qualificados.',
+    description: 'Autoridade e captação de leads: site institucional que comunica diferenciais e convida à ação para aulas e programas.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
     image: borgesAcademyImage,
@@ -124,8 +122,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 10,
     title: 'Consórcio da Vez',
-    description:
-      'Landing page para uma agência de consórcio, com comunica\u00e7\u00e3o direta sobre benef\u00edcios reais, provas sociais e simula\u00e7\u00e3o de planos.',
+    description: 'Clareza e conversão: landing que explica benefícios reais do consórcio, reforça confiança e direciona para simulação e contato.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['HTML', 'CSS', 'JavaScript', 'SEO'],
     image: consorcioDaVezImage,
@@ -135,8 +132,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 11,
     title: 'Vanlume Tráfego',
-    description:
-      'Landing page focada na venda de templates de automa\u00e7\u00e3o n8n para Meta Ads, com destaque para ganhos de produtividade e automa\u00e7\u00e3o em tempo real.',
+    description: 'Venda de produto digital: landing que destaca ganhos de produtividade e automação em Meta Ads para fechamento de templates n8n.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
     image: vanlumetrafegoImage,
@@ -146,8 +142,7 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 12,
     title: 'Template de Agência Imobiliária',
-    description:
-      'Landing page template para agências imobiliárias, com foco em curadoria de imóveis, provas sociais e captação de leads qualificados.',
+    description: 'Captação qualificada para imobiliárias: curadoria de imóveis, provas sociais e formulário orientado a lead para visita e avaliação.',
     badge: 'SISTEMA EM PRODUÇÃO',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Framer Motion', 'GSAP', 'ScrollTrigger'],
     image: templateImobiliariaImage,
@@ -247,8 +242,8 @@ const PortfolioSection: React.FC = () => {
           className={`portfolio ${inView ? 'portfolio--in-view' : ''} ${reducedMotion ? 'portfolio--reduced-motion' : ''}`}
         >
           <header className="portfolio__header">
-            <p className="portfolio__eyebrow">MEU TRABALHO</p>
-            <h2 className="portfolio__title">Projetos Selecionados</h2>
+            <p className="portfolio__eyebrow">CASES</p>
+            <h2 className="portfolio__title">Projetos que geram resultado</h2>
             <p className="portfolio__description">{SECTION_DESCRIPTION}</p>
           </header>
 

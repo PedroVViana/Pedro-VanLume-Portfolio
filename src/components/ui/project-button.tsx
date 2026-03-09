@@ -8,7 +8,7 @@ export function ProjectButton({ onClick }: { onClick?: () => void }) {
             onClick={onClick}
         >
             <span>
-                Ver Projetos
+                Ver Cases
             </span>
         </Button>
     );

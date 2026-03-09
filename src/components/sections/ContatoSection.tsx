@@ -17,15 +17,15 @@ const ContatoSection: React.FC = () => {
   return (
     <Section id="contato" className="bg-[var(--color-bg-primary)] pb-24 md:pb-28">
       <Container>
-        <header className="mb-12 md:mb-16 max-w-3xl">
+          <header className="mb-12 md:mb-16 max-w-3xl">
           <p className="text-[var(--color-accent-purple)] font-semibold text-xs tracking-[0.2em] uppercase mb-3">
             CONTATO
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] tracking-tight mb-4">
-            Vamos conversar sobre seu próximo projeto
+            Vamos alinhar sua operação com a solução certa
           </h2>
           <p className="text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed">
-            Me diga o contexto e eu retorno com um plano claro de execução.
+            Conte o desafio ou a ideia. Retornamos com uma proposta clara de escopo, prazo e investimento.
           </p>
         </header>
 
@@ -40,7 +40,7 @@ const ContatoSection: React.FC = () => {
               method="POST"
               className="space-y-6"
             >
-              <input type="hidden" name="_subject" value="Novo contato do portfólio" />
+              <input type="hidden" name="_subject" value="Solicitação DevLume — Novo contato" />
               <div className="space-y-2">
                 <label htmlFor="contact-name" className="block text-sm font-semibold text-[var(--color-text-secondary)]">
                   Nome
@@ -82,7 +82,7 @@ const ContatoSection: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  placeholder="Conte-me sobre seu projeto..."
+                  placeholder="Descreva seu projeto ou desafio..."
                   className="w-full px-4 py-3 rounded-[var(--radius-sm)] bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-purple)]/25 focus:border-[var(--color-accent-purple)] transition-all duration-200 resize-none"
                 />
               </div>
@@ -91,7 +91,7 @@ const ContatoSection: React.FC = () => {
                   type="submit"
                   className="inline-flex items-center justify-center px-8 py-3 rounded-[var(--radius-sm)] bg-[var(--color-text-primary)] text-white font-semibold text-sm shadow-[var(--shadow-sm)] hover:opacity-90 transition-opacity duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-purple)] focus-visible:ring-offset-2"
                 >
-                  Enviar Mensagem
+                  Solicitar Orçamento
                 </button>
                 <a
                   href={WHATSAPP_URL}
@@ -99,7 +99,7 @@ const ContatoSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center text-sm font-semibold text-[var(--color-accent-purple)] hover:text-[var(--color-text-primary)] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-purple)] focus-visible:ring-offset-2 rounded"
                 >
-                  Falar no WhatsApp →
+                  Falar com Especialista →
                 </a>
               </div>
             </form>
