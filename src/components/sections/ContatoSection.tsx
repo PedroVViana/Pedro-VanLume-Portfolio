@@ -36,7 +36,7 @@ const ContatoSection: React.FC = () => {
             className="p-8 md:p-10 bg-white border border-[var(--color-border)] rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] transition-all duration-200 ease-out hover:shadow-[var(--shadow-md)]"
           >
             <form
-              action="https://formsubmit.co/pedro.vvviana@gmail.com"
+              action="https://formsubmit.co/pedro.vviana@hotmail.com"
               method="POST"
               className="space-y-6"
             >
