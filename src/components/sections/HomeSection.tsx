@@ -1,27 +1,25 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
+import { Layers, Briefcase, Zap } from 'lucide-react';
 import { ProjectButton } from '@/components/ui/project-button';
 import { GetStartedButton } from '@/components/ui/get-started-button';
-import { AuroraBackground } from '@/components/ui/aurora-background';
+import { GlowyWavesBg } from '@/components/ui/glowy-waves-bg';
 import LocationBadge from '@/components/ui/LocationBadge';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 
-const HomeSection: React.FC = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 64;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+const metrics = [
+  { icon: Layers,    label: 'Projetos Entregues', value: '+100',    color: 'blue'   },
+  { icon: Briefcase, label: 'Experiência',         value: '+4 Anos', color: 'purple' },
+  { icon: Zap,       label: 'PageSpeed Score',     value: '+90',     color: 'blue'   },
+];
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+const HomeSection: React.FC = () => {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({ top, behavior: 'smooth' });
   };
 
   const containerVariants: Variants = {
@@ -45,16 +43,29 @@ const HomeSection: React.FC = () => {
   };
 
   return (
-    <Section id="home" spacing="none" className="min-h-screen overflow-hidden relative">
-      <AuroraBackground className="h-screen w-full pt-[var(--navbar-height)]">
-        <Container className="flex-1 flex flex-col items-center justify-center relative z-30 py-12">
+    <Section id="home" spacing="none" className="min-h-screen overflow-hidden relative bg-white">
+      {/* Canvas de ondas animadas */}
+      <GlowyWavesBg />
+
+      {/* Brilho central sutil sobre as ondas */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+      >
+        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 h-[480px] w-[560px] rounded-full bg-[#8c52ff]/[0.06] blur-[130px]" />
+        <div className="absolute right-0 bottom-0 h-[320px] w-[320px] rounded-full bg-[#0071E3]/[0.05] blur-[110px]" />
+      </div>
+
+      {/* Conteúdo */}
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center pt-[var(--navbar-height)]">
+        <Container className="flex flex-col items-center justify-center py-12">
           <motion.div
             className="max-w-4xl w-full flex flex-col items-center text-center"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {/* Bloco Superior de Contexto (Header da Hero) */}
+            {/* Bloco Superior de Contexto */}
             <motion.div variants={itemVariants} className="flex flex-col items-center gap-4 mb-14">
               <LocationBadge />
               <div className="flex flex-col items-center">
@@ -65,24 +76,25 @@ const HomeSection: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Headline Monumental Style Apple */}
+            {/* Headline */}
             <motion.h1
               variants={itemVariants}
               className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-apple-text-primary tracking-tight leading-[0.95] mb-8"
             >
-              Transformamos ideias <br />
-              <span className="text-apple-accent-purple">complexas em produtos</span> escaláveis
+              Seu próximo sistema <br />
+              <span className="text-apple-accent-purple">pronto para escalar</span> <br />
+              desde o dia um.
             </motion.h1>
 
-            {/* Subheadline Elegante */}
+            {/* Subheadline */}
             <motion.p
               variants={itemVariants}
               className="text-lg sm:text-xl md:text-2xl text-apple-text-secondary leading-relaxed max-w-2xl mb-12 font-medium"
             >
-              Soluções de software sob medida para otimizar sua operação — com foco em ROI, performance e escalabilidade.
+              Desenvolvemos sistemas web sob medida que reduzem custo operacional e geram ROI mensurável — sem achismo, só engenharia.
             </motion.p>
 
-            {/* CTAs com Estilo Refinado */}
+            {/* CTAs */}
             <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 relative z-[100]"
@@ -93,9 +105,38 @@ const HomeSection: React.FC = () => {
                 onClick={() => scrollToSection('contato')}
               />
             </motion.div>
+
+            {/* Metrics cards */}
+            <motion.div
+              variants={itemVariants}
+              className="grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-lg mt-10 relative z-[100]"
+            >
+              {metrics.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center gap-1 py-4 px-3 rounded-2xl bg-white/60 backdrop-blur-sm border border-[var(--color-border)] shadow-[var(--shadow-sm)]"
+                >
+                  <div
+                    className={`w-7 h-7 rounded-full flex items-center justify-center mb-1 ${
+                      item.color === 'blue'
+                        ? 'bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)]'
+                        : 'bg-[var(--color-accent-purple)]/10 text-[var(--color-accent-purple)]'
+                    }`}
+                  >
+                    <item.icon size={14} />
+                  </div>
+                  <span className="text-lg sm:text-xl font-bold text-[var(--color-text-primary)] leading-none">
+                    {item.value}
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)] text-center leading-tight">
+                    {item.label}
+                  </span>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </Container>
-      </AuroraBackground>
+      </div>
     </Section>
   );
 };

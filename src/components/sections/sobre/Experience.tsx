@@ -51,7 +51,7 @@ const Experience: React.FC = () => {
       year: '2025',
       title: 'Engenheiro de Software Fullstack',
       company: 'Engeman',
-      period: 'Mai 2025 – Atual',
+      period: '2025 – 2026',
       bullets: [
         'Desenvolvo interfaces dinâmicas para gestão de processos e produtividade.',
         'Projeto integrações complexas entre ecossistemas React e Spring Boot.',
