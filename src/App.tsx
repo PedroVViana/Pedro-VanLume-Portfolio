@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Icon } from '@iconify/react';
-import devlumeLogo from './assets/devlume.png';
 import HomeSection from './components/sections/HomeSection';
 import SobreSection from './components/sections/SobreSection';
 import PortfolioSection from './components/sections/PortfolioSection';
@@ -61,7 +60,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollToSection('home')}>
-          <img src={devlumeLogo} alt="DevLume" className="navbar-logo__img" />
+          Pedro Van-Lume
         </div>
         <button
           className="navbar-toggle"
@@ -73,7 +72,7 @@ function Navbar() {
         <ul className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
           <li><button onClick={() => scrollToSection('home')}>Início</button></li>
           <li><button onClick={() => scrollToSection('servicos')}>Serviços</button></li>
-          <li><button onClick={() => scrollToSection('sobre')}>A DevLume</button></li>
+          <li><button onClick={() => scrollToSection('sobre')}>Sobre</button></li>
           <li><button onClick={() => scrollToSection('portfolio')}>Cases</button></li>
           <li><button onClick={() => scrollToSection('depoimentos')}>Depoimentos</button></li>
           <li><button onClick={() => scrollToSection('contato')}>Contato</button></li>
@@ -85,7 +84,7 @@ function Navbar() {
 
 function WhatsAppButton() {
   const phoneNumber = '5581994952030';
-  const message = encodeURIComponent('Olá! Gostaria de solicitar um orçamento ou agendar uma consultoria com a DevLume.');
+  const message = encodeURIComponent('Olá! Gostaria de conversar sobre um projeto ou agendar uma consultoria com o Pedro.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (

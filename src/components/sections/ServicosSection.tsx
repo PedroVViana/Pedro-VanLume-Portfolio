@@ -17,9 +17,9 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: 'Soluções Corporativas',
-    micro: 'Sistemas web sob medida',
-    description: 'Dashboards, CRMs e ERPs com foco em eficiência operacional e escalabilidade.',
+    title: 'Sistemas sob Medida',
+    micro: 'Sistemas web inteligentes',
+    description: 'Dashboards, CRMs e ERPs com foco em eficiência operacional e usabilidade.',
     icon: Code2,
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop',
   },
@@ -27,7 +27,7 @@ const services: Service[] = [
     id: 2,
     title: 'E-commerce & Vendas',
     micro: 'Lojas de alta conversão',
-    description: 'E-commerces rápidos, seguros e otimizados para vender mais.',
+    description: 'Desenvolvimento de e-commerces rápidos, seguros e estruturados para conversão.',
     icon: ShoppingCart,
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format&fit=crop',
   },
@@ -35,7 +35,7 @@ const services: Service[] = [
     id: 3,
     title: 'Automação Inteligente',
     micro: 'Processos que trabalham por você',
-    description: 'Integrações e automações via APIs para reduzir tarefas repetitivas.',
+    description: 'Criação de integrações e automações de processos para eliminar tarefas repetitivas.',
     icon: Zap,
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop',
   },
@@ -43,7 +43,7 @@ const services: Service[] = [
     id: 4,
     title: 'Landing Pages & Performance',
     micro: 'Páginas que convertem',
-    description: 'LPs com SEO, velocidade e copy orientada a resultados.',
+    description: 'Landing pages de alta performance com SEO otimizado, velocidade extrema e foco em conversão.',
     icon: LayoutTemplate,
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&auto=format&fit=crop',
   },
@@ -51,7 +51,7 @@ const services: Service[] = [
     id: 5,
     title: 'Manutenção & Suporte',
     micro: 'Evolução contínua',
-    description: 'Correções, melhorias e monitoramento para manter tudo estável.',
+    description: 'Suporte técnico, manutenção preventiva e evolução constante para manter seu software estável.',
     icon: Wrench,
     image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&auto=format&fit=crop',
   },
@@ -207,14 +207,14 @@ const ServicosSection: React.FC = () => {
         {/* Header */}
         <header className="mb-4 max-w-3xl">
           <p className="text-[var(--color-accent-purple)] font-semibold text-xs tracking-[0.2em] uppercase mb-3">
-            O QUE FAZEMOS
+            ESPECIALIDADES
           </p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] tracking-tight">
               Serviços & Soluções
             </h2>
             <p className="text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed md:max-w-sm">
-              Desenvolvemos sistemas e landing pages com foco em eficiência operacional, escalabilidade e retorno mensurável.
+              Desenvolvo sistemas, automações e landing pages sob medida, com foco em eficiência, performance e retorno real.
             </p>
           </div>
         </header>

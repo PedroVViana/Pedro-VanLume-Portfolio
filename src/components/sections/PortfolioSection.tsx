@@ -26,7 +26,7 @@ interface PortfolioItem {
 }
 
 const SECTION_DESCRIPTION =
-  'Cases reais: sistemas e landing pages que entregam eficiência operacional, decisão baseada em dados e crescimento escalável para negócios.';
+  'Seleção de projetos desenvolvidos: sistemas e landing pages sob medida para otimizar processos, analisar dados e gerar resultados reais.';
 
 const portfolioData: PortfolioItem[] = [
   {

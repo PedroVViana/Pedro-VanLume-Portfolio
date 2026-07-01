@@ -21,13 +21,13 @@ const Experience: React.FC = () => {
     {
       id: 1,
       year: '2021',
-      title: 'Software Engineer & Founder',
+      title: 'Software Engineer (Autônomo)',
       company: 'DevLume',
       period: '2021 – Atual',
       bullets: [
-        'Lidero o desenvolvimento de aplicações SaaS com ownership integral.',
-        'Construo produtos digitais focados em UX e performance extrema.',
-        'Implemento integrações estratégicas via APIs REST e Firebase.'
+        'Desenvolvimento de aplicações sob demanda e SaaS com responsabilidade ponta a ponta.',
+        'Construção de produtos digitais focados em experiência do usuário e performance.',
+        'Implementação de integrações completas via APIs REST e Firebase.'
       ],
       skills: ['React', 'Node.js', 'Tailwind', 'Firebase', 'APIs REST', 'Next.js'],
       color: 'blue'

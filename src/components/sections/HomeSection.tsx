@@ -9,9 +9,9 @@ import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 
 const metrics = [
-  { icon: Layers,    label: 'Projetos Entregues', value: '+100',    color: 'blue'   },
-  { icon: Briefcase, label: 'Experiência',         value: '+4 Anos', color: 'purple' },
-  { icon: Zap,       label: 'PageSpeed Score',     value: '+90',     color: 'blue'   },
+  { icon: Layers, label: 'Projetos Desenvolvidos', value: '+100', color: 'blue' },
+  { icon: Briefcase, label: 'Anos de Experiência', value: '+4 Anos', color: 'purple' },
+  { icon: Zap, label: 'Tecnologias Dominadas', value: '15+', color: 'blue' },
 ];
 
 const HomeSection: React.FC = () => {
@@ -70,7 +70,7 @@ const HomeSection: React.FC = () => {
               <LocationBadge />
               <div className="flex flex-col items-center">
                 <span className="text-apple-accent-purple font-bold text-[11px] sm:text-[12px] tracking-[0.4em] uppercase">
-                  Software House · Soluções sob medida
+                  Portfólio Pessoal · Pedro Van-Lume
                 </span>
                 <div className="h-[1.5px] w-10 bg-apple-accent-blue/20 mt-3" />
               </div>
@@ -81,9 +81,9 @@ const HomeSection: React.FC = () => {
               variants={itemVariants}
               className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-apple-text-primary tracking-tight leading-[0.95] mb-8"
             >
-              Seu próximo sistema <br />
-              <span className="text-apple-accent-purple">pronto para escalar</span> <br />
-              desde o dia um.
+              Transformando ideias <br />
+              <span className="text-apple-accent-purple">em produtos digitais</span> <br />
+              bem construídos.
             </motion.h1>
 
             {/* Subheadline */}
@@ -91,7 +91,7 @@ const HomeSection: React.FC = () => {
               variants={itemVariants}
               className="text-lg sm:text-xl md:text-2xl text-apple-text-secondary leading-relaxed max-w-2xl mb-12 font-medium"
             >
-              Desenvolvemos sistemas web sob medida que reduzem custo operacional e geram ROI mensurável — sem achismo, só engenharia.
+              Desenvolvedor front-end e designer especializado em sistemas web, automações, e-commerces e experiências digitais orientadas a resultado.
             </motion.p>
 
             {/* CTAs */}
@@ -117,11 +117,10 @@ const HomeSection: React.FC = () => {
                   className="flex flex-col items-center gap-1 py-4 px-3 rounded-2xl bg-white/60 backdrop-blur-sm border border-[var(--color-border)] shadow-[var(--shadow-sm)]"
                 >
                   <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center mb-1 ${
-                      item.color === 'blue'
+                    className={`w-7 h-7 rounded-full flex items-center justify-center mb-1 ${item.color === 'blue'
                         ? 'bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)]'
                         : 'bg-[var(--color-accent-purple)]/10 text-[var(--color-accent-purple)]'
-                    }`}
+                      }`}
                   >
                     <item.icon size={14} />
                   </div>

@@ -22,7 +22,7 @@ const ContatoSection: React.FC = () => {
             CONTATO
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] tracking-tight mb-4">
-            Vamos alinhar sua operação com a solução certa
+            Vamos planejar e desenvolver a sua solução
           </h2>
           <p className="text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed">
             Conte o desafio ou a ideia. Retornamos com uma proposta clara de escopo, prazo e investimento.
@@ -40,7 +40,7 @@ const ContatoSection: React.FC = () => {
               method="POST"
               className="space-y-6"
             >
-              <input type="hidden" name="_subject" value="Solicitação DevLume — Novo contato" />
+              <input type="hidden" name="_subject" value="Contato Portfólio — Pedro Van-Lume" />
               <div className="space-y-2">
                 <label htmlFor="contact-name" className="block text-sm font-semibold text-[var(--color-text-secondary)]">
                   Nome
@@ -99,7 +99,7 @@ const ContatoSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center text-sm font-semibold text-[var(--color-accent-purple)] hover:text-[var(--color-text-primary)] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-purple)] focus-visible:ring-offset-2 rounded"
                 >
-                  Falar com Especialista →
+                  Falar no WhatsApp →
                 </a>
               </div>
             </form>

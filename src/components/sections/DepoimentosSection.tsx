@@ -71,7 +71,7 @@ const DepoimentosSection: React.FC = () => {
         >
           <header className="depoimentos__header">
             <p className="depoimentos__eyebrow">PROVA SOCIAL</p>
-            <h2 className="depoimentos__title">O que dizem quem trabalhou com a DevLume</h2>
+            <h2 className="depoimentos__title">O que dizem sobre trabalhar comigo</h2>
             <p className="depoimentos__description">
               Resultados reais em lucro, autoridade de marca e competência técnica.
             </p>
