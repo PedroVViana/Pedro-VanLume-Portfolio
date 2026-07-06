@@ -70,13 +70,13 @@ const TechSkills: React.FC = () => {
               </h2>
 
               <p className="text-lg text-apple-text-secondary leading-relaxed max-w-xl font-medium mx-auto lg:mx-0">
-                Uso um arsenal tecnológico moderno para construir aplicações escaláveis, performáticas e bonitas. Do backend robusto à interface pixel-perfect.
+                Desenvolvo sistemas de alta performance com arquiteturas escaláveis e focadas em resultados. Do back-end integrado à engenharia de front-end orientada à conversão e automação.
               </p>
             </div>
 
             <div className="space-y-6">
               <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                {['Frontend', 'Backend', 'DevOps', 'Design'].map((tag) => (
+                {['Frontend', 'Backend', 'DevOps', 'IA & Automação'].map((tag) => (
                   <span key={tag} className="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full bg-apple-bg-secondary text-apple-text-tertiary border border-apple-border/50">
                     {tag}
                   </span>

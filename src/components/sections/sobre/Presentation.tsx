@@ -26,25 +26,24 @@ const Presentation: React.FC = () => {
           </span>
           <div className="h-[1.5px] w-8 bg-[var(--color-accent-purple)]/20 mt-3 mb-6" />
           <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-[var(--color-text-primary)] tracking-tight leading-[1.05] mb-5">
-            Desenvolvo soluções digitais{' '}
+            Desenvolvo produtos digitais{' '}
             <span className="text-[var(--color-accent-purple)]">
-              que simplificam processos e geram impacto real.
+              que aliam engenharia de software e impacto de negócio.
             </span>
           </h2>
           <p className="text-lg md:text-xl text-[var(--color-text-secondary)] leading-relaxed max-w-2xl font-medium">
-            Especializado em construir ferramentas que otimizam a eficiência operacional: automação de
-            processos, gestão de indicadores e dashboards para decisões baseadas em dados.
+            Front-end Engineer & AI Application Engineer focado em arquitetura escalável, performance extrema e automação inteligente. Desenvolvo sistemas corporativos e experiências digitais projetadas para otimizar operações e gerar retorno financeiro real.
           </p>
         </header>
 
         {/* ── Editorial card ── */}
         <TeamMemberCard
           position="left"
-          jobPosition="Software Engineer & Designer"
+          jobPosition="Front-end Engineer | AI Application Engineer"
           firstName="Pedro"
           lastName="Van-Lume"
           imageUrl={avatarImage}
-          description="Desenvolvo sistemas escaláveis com foco em performance e usabilidade. Sem achismo — apenas engenharia de software aplicada a resultados reais."
+          description="Construo aplicações modernas com foco em arquitetura limpa, performance técnica, integrações de IA e otimização de conversão. Sem achismo — apenas engenharia aplicada ao resultado."
           onCtaClick={scrollToContact}
         />
 

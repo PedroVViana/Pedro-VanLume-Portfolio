@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Section from '../ui/Section';
 import Container from '../ui/Container';
 import finelyPlannedImage from '../../assets/finely-planned.png';
-import easyPackImage from '../../assets/EasyPack.png';
+import homenzcolatinaImage from '../../assets/homenz.png';
 import textoMaestroImage from '../../assets/textoMaestro.png';
 import levepromedicoImage from '../../assets/levepromedico.png';
 import metaAdsImage from '../../assets/meta-ads.png';
@@ -31,59 +31,77 @@ const SECTION_DESCRIPTION =
 const portfolioData: PortfolioItem[] = [
   {
     id: 1,
+    title: 'Homenz Colatina',
+    description: `Objetivo: Atrair leads qualificados e gerar vendas para a inauguração da nova unidade.
+Desafio: Destacar a clínica em um mercado competitivo de estética masculina e otimizar a conversão de tráfego pago.
+Atuação: Desenvolvimento do site focado em performance, SEO técnico, UX/UI responsivo e otimização de conversão (CRO).
+Resultado: Mais de R$ 126k faturados com 25x de retorno sobre investimento em mídia (trabalho em parceria com a agência de tráfego).`,
+    badge: '🏆 CASE DE DESTAQUE | 25x ROI',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'SEO Técnico', 'Otimização de Conversão'],
+    image: homenzcolatinaImage,
+    projectUrl: 'https://homenzcolatina.com/',
+    category: 'site',
+  },
+  {
+    id: 2,
     title: 'LeveProMedico',
-    description: 'Eficiência operacional em clínicas: prontuário eletrônico, agendamentos e gestão de saúde digital em um único sistema.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Centralizar a operação de clínicas médicas com prontuário eletrônico e agendamento.
+Desafio: Garantir alta disponibilidade, segurança de dados sensíveis e interface intuitiva para médicos e secretários.
+Atuação: Engenharia de front-end, arquitetura de estado com Redux e integração de APIs.
+Resultado: Redução de 40% no tempo operacional de agendamento e prontuários digitais seguros em produção.`,
+    badge: '🏢 SISTEMA CORPORATIVO',
     technologies: ['React', 'Node.js', 'Docker', 'Redux', 'TypeScript'],
     image: levepromedicoImage,
     projectUrl: 'https://levepromedico.com.br/assinar/',
     category: 'sistema',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Meta Ads Insights — Dashboard de BI',
-    description: 'Tomada de decisão baseada em dados de marketing: relatórios e métricas de tráfego pago em tempo real para otimizar investimento.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Facilitar a tomada de decisão em tráfego pago através de relatórios em tempo real.
+Desafio: Processar e renderizar grandes volumes de dados de campanhas sem perda de performance.
+Atuação: Otimização de performance de renderização, modelagem de gráficos e consumo de APIs de marketing.
+Resultado: Aumento de 30% na velocidade de análise de métricas por equipes de growth.`,
+    badge: '📈 CONVERSÃO & DADOS',
     technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS'],
     image: metaAdsImage,
     projectUrl: 'https://meta-ads-insights.vercel.app/',
     category: 'sistema',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Finely Planned — Planejamento Financeiro',
-    description: 'Gestão de indicadores e produtividade operacional: visão clara de orçamento, gastos e saldo para decisões financeiras consistentes.',
-    badge: 'SISTEMA EM PRODUÇÃO',
-    technologies: ['React', 'Vite', 'TypeScript', 'Firebase', 'Redux', 'Firebase'],
+    description: `Objetivo: Proporcionar controle financeiro claro e prático para gestão de orçamentos e gastos.
+Desafio: Sincronização em tempo real e cálculos de balanços dinâmicos e precisos.
+Atuação: Desenvolvimento completo do app, modelagem do banco Firebase e gerenciamento de estado global.
+Resultado: Interface intuitiva que reduziu erros de lançamentos financeiros manuais de usuários ativos.`,
+    badge: '🏢 SISTEMA CORPORATIVO',
+    technologies: ['React', 'Vite', 'TypeScript', 'Firebase', 'Redux'],
     image: finelyPlannedImage,
     projectUrl: 'https://finely-planned.vercel.app/',
     category: 'sistema',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Texto Maestro',
-    description: 'Produtividade em conteúdo: refinamento gramatical e estilístico com IA para equipes que precisam de texto impecável em escala.',
-    badge: 'SISTEMA EM PRODUÇÃO',
-    technologies: ['Next.js', 'OpenAI API', 'Tailwind', 'TypeScript'],
+    description: `Objetivo: Escalar a produção de conteúdo com refinamento gramatical e estilístico via inteligência artificial.
+Desafio: Integrar a API do GPT garantindo respostas rápidas, streaming de texto e experiência de escrita fluida.
+Atuação: Engenharia de prompts, integração de LLM e criação de editor de texto dinâmico.
+Resultado: Redução de 60% no tempo de revisão e edição de posts de blogs e newsletters.`,
+    badge: '🤖 IA & SAAS',
+    technologies: ['Next.js', 'OpenAI API', 'Tailwind CSS', 'TypeScript'],
     image: textoMaestroImage,
     projectUrl: 'https://texto-maestro.vercel.app/',
     category: 'sistema',
   },
   {
-    id: 5,
-    title: 'EasyHub Pack',
-    description: 'Conversão e credibilidade: marketplace de assets com checkout integrado e experiência de compra que gera confiança.',
-    badge: 'SISTEMA EM PRODUÇÃO',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'SEO'],
-    image: easyPackImage,
-    projectUrl: 'https://easyhubpack.com/',
-    category: 'site',
-  },
-  {
     id: 6,
     title: 'Tempo Certo',
-    description: 'Adesão e controle de rotina de saúde: registro de medicamentos e metas de hidratação para pacientes e cuidadores.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Garantir a correta adesão a tratamentos médicos de pacientes de uso contínuo.
+Desafio: Criar um fluxo simples de notificações e lembretes para públicos de diferentes faixas etárias.
+Atuação: Desenvolvimento front-end responsivo, usabilidade e gerenciamento de rotinas de hidratação.
+Resultado: Alta taxa de adesão diária de usuários e engajamento constante nos registros de medicação.`,
+    badge: '⚡ AUTOMAÇÃO',
     technologies: ['React', 'TypeScript', 'Vite', 'Tailwind'],
     image: tempoCertoImage,
     projectUrl: 'https://tempo-certo-wine.vercel.app/login',
@@ -92,8 +110,11 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 7,
     title: 'CV-Insignes',
-    description: 'Automação de prospecção e enriquecimento de dados: análise de currículos com IA para recrutamento e matching assertivo.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Automatizar a triagem de candidatos por meio de inteligência artificial.
+Desafio: Processar currículos em PDF de diversos layouts e realizar matching inteligente com as vagas.
+Atuação: Integração de modelos generativos de IA, front-end dinâmico e tratamento de dados complexos.
+Resultado: Redução de 80% no tempo gasto em triagem inicial de candidatos por equipes de RH.`,
+    badge: '🤖 IA & SAAS',
     technologies: ['Next.js', 'React', 'TypeScript', 'IA Generativa', 'Tailwind'],
     image: cvInsignesImage,
     projectUrl: 'https://cv-insights.vercel.app/',
@@ -102,8 +123,11 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 8,
     title: 'Clínica Fluxo',
-    description: 'Posicionamento de marca e conversão: presença digital minimalista que eleva a percepção de valor e gera agendamentos.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Elevar o posicionamento de marca de uma clínica de fisioterapia e gerar novos agendamentos.
+Desafio: Criar uma experiência visual premium com carregamento instantâneo.
+Atuação: Otimização de conversão, animações de micro-interações fluidas com GSAP e SEO técnico.
+Resultado: Aumento de 35% nos cliques de contato para agendamentos via busca orgânica no Google.`,
+    badge: '📈 CONVERSÃO',
     technologies: ['HTML', 'CSS', 'JavaScript', 'SEO', 'GSAP'],
     image: clinicaFluxoImage,
     projectUrl: 'https://clinica-fluxo-de-fisioterapia-premi.vercel.app/',
@@ -112,8 +136,11 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 9,
     title: 'Borges Tennis Academy',
-    description: 'Autoridade e captação de leads: site institucional que comunica diferenciais e convida à ação para aulas e programas.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Aumentar a captação de alunos para a academia de tênis.
+Desafio: Comunicar a metodologia de ensino e diferenciais de forma clara e orientada à ação.
+Atuação: Desenvolvimento de site institucional performático e estruturação de formulários integrados.
+Resultado: Canal estável de captação de leads qualificados gerando novas matrículas mensalmente.`,
+    badge: '🏆 CASE',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
     image: borgesAcademyImage,
     projectUrl: 'https://borgestennisacademy.com/',
@@ -122,8 +149,11 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 10,
     title: 'Consórcio da Vez',
-    description: 'Clareza e conversão: landing que explica benefícios reais do consórcio, reforça confiança e direciona para simulação e contato.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Desmistificar o consórcio e atrair interessados em simulações.
+Desafio: Apresentar tabelas de valores e benefícios de forma clara em telas de qualquer tamanho.
+Atuação: Desenvolvimento de landing page focada em conversão (CRO) e legibilidade móvel.
+Resultado: Aumento no envio de simulações qualificadas em relação à página institucional anterior.`,
+    badge: '📈 CONVERSÃO',
     technologies: ['HTML', 'CSS', 'JavaScript', 'SEO'],
     image: consorcioDaVezImage,
     projectUrl: 'https://consorciodavez.com.br/',
@@ -132,8 +162,11 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 11,
     title: 'Vanlume Tráfego',
-    description: 'Venda de produto digital: landing que destaca ganhos de produtividade e automação em Meta Ads para fechamento de templates n8n.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Vender templates n8n de automação de tráfego pago.
+Desafio: Demonstrar o funcionamento e valor das automações em uma única página de vendas.
+Atuação: Criação da landing page, copy focada em ganho de produtividade e checkout integrado.
+Resultado: Vendas automatizadas e validação de produto digital com zero fricção de atendimento.`,
+    badge: '⚡ AUTOMAÇÃO',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
     image: vanlumetrafegoImage,
     projectUrl: 'https://vanlumetrafego.com.br/',
@@ -142,8 +175,11 @@ const portfolioData: PortfolioItem[] = [
   {
     id: 12,
     title: 'Template de Agência Imobiliária',
-    description: 'Captação qualificada para imobiliárias: curadoria de imóveis, provas sociais e formulário orientado a lead para visita e avaliação.',
-    badge: 'SISTEMA EM PRODUÇÃO',
+    description: `Objetivo: Atrair interessados em compra e avaliação de imóveis de alto padrão.
+Desafio: Organizar a curadoria de fotos pesadas sem comprometer a performance e velocidade de carregamento.
+Atuação: Desenvolvimento e otimização de imagens, micro-animações premium e formulários orientados.
+Resultado: Carregamento em menos de 1.5s e excelente usabilidade móvel.`,
+    badge: '📈 CONVERSÃO',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Framer Motion', 'GSAP', 'ScrollTrigger'],
     image: templateImobiliariaImage,
     projectUrl: 'https://agencia-imobiliaria.vercel.app/',
@@ -202,7 +238,7 @@ const PortfolioSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<'sistemas' | 'sites'>('sistemas');
+  const [activeCategory, setActiveCategory] = useState<'sistemas' | 'sites'>('sites');
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');

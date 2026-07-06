@@ -1,17 +1,18 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Layers, Briefcase, Zap } from 'lucide-react';
 import { ProjectButton } from '@/components/ui/project-button';
 import { GetStartedButton } from '@/components/ui/get-started-button';
 import { GlowyWavesBg } from '@/components/ui/glowy-waves-bg';
 import LocationBadge from '@/components/ui/LocationBadge';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
+import { Layers, Briefcase, Zap, TrendingUp } from 'lucide-react';
 
 const metrics = [
   { icon: Layers, label: 'Projetos Desenvolvidos', value: '+100', color: 'blue' },
   { icon: Briefcase, label: 'Anos de Experiência', value: '+4 Anos', color: 'purple' },
-  { icon: Zap, label: 'Tecnologias Dominadas', value: '15+', color: 'blue' },
+  { icon: TrendingUp, label: 'Receita Impulsionada', value: '+R$ 500k', color: 'blue' },
+  { icon: Zap, label: 'Tecnologias Dominadas', value: '15+', color: 'purple' },
 ];
 
 const HomeSection: React.FC = () => {
@@ -91,7 +92,8 @@ const HomeSection: React.FC = () => {
               variants={itemVariants}
               className="text-lg sm:text-xl md:text-2xl text-apple-text-secondary leading-relaxed max-w-2xl mb-12 font-medium"
             >
-              Desenvolvedor front-end e designer especializado em sistemas web, automações, e-commerces e experiências digitais orientadas a resultado.
+              Desenvolvedor Front-end e Engenheiro de IA especializado em sistemas web, automações, e-commerces e produtos digitais orientados a resultado.
+              {' '}Projetos que já contribuíram para mais de R$ 500 mil em receita, incluindo cases com até 25x de retorno sobre investimento em mídia.
             </motion.p>
 
             {/* CTAs */}
@@ -109,7 +111,7 @@ const HomeSection: React.FC = () => {
             {/* Metrics cards */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-lg mt-10 relative z-[100]"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full max-w-2xl mt-10 relative z-[100]"
             >
               {metrics.map((item, idx) => (
                 <div

@@ -21,27 +21,27 @@ const Experience: React.FC = () => {
     {
       id: 1,
       year: '2021',
-      title: 'Software Engineer (Autônomo)',
+      title: 'Front-end & AI Engineer (Autônomo)',
       company: 'DevLume',
       period: '2021 – Atual',
       bullets: [
-        'Desenvolvimento de aplicações sob demanda e SaaS com responsabilidade ponta a ponta.',
-        'Construção de produtos digitais focados em experiência do usuário e performance.',
-        'Implementação de integrações completas via APIs REST e Firebase.'
+        'Desenvolvimento de SaaS, sistemas corporativos e automações sob demanda focados em escala.',
+        'Integração de APIs de Inteligência Artificial (OpenAI, Anthropic) para otimização de processos e ganho operacional.',
+        'Implementação de landing pages e e-commerces de alta conversão com foco em SEO técnico e performance.'
       ],
-      skills: ['React', 'Node.js', 'Tailwind', 'Firebase', 'APIs REST', 'Next.js'],
+      skills: ['React', 'Node.js', 'Tailwind', 'Firebase', 'APIs REST', 'Next.js', 'IA Generativa'],
       color: 'blue'
     },
     {
       id: 2,
       year: '2022',
-      title: 'Desenvolvedor de Software',
+      title: 'Software Engineer',
       company: 'O-PitBlast',
       period: '2022 – 2023',
       bullets: [
-        'Refatorei interfaces críticas em software de simulação 3D (WPF/C#).',
-        'Desenvolvi ferramentas internas de automação para decisões técnicas.',
-        'Gerenciei fluxos de versionamento e CI/CD via Azure DevOps.'
+        'Desenvolvimento e refatoração de interfaces em softwares de simulação 3D (WPF/C#) de alta performance.',
+        'Criação de ferramentas internas de automação para tomada de decisões técnicas.',
+        'Estruturação de pipelines de versionamento e CI/CD via Azure DevOps.'
       ],
       skills: ['C#', 'WPF', 'XAML', 'Azure DevOps', 'Git', '.NET'],
       color: 'red'
@@ -49,13 +49,13 @@ const Experience: React.FC = () => {
     {
       id: 3,
       year: '2025',
-      title: 'Engenheiro de Software Fullstack',
+      title: 'Software Engineer (Full-stack)',
       company: 'Engeman',
       period: '2025 – 2026',
       bullets: [
-        'Desenvolvo interfaces dinâmicas para gestão de processos e produtividade.',
-        'Projeto integrações complexas entre ecossistemas React e Spring Boot.',
-        'Implemento arquiteturas de estado escaláveis e ambientes dockerizados.'
+        'Engenharia de front-end com arquiteturas de estado complexas e escaláveis no ecossistema React.',
+        'Desenvolvimento de integrações robustas entre ecossistemas React, TypeScript e Java/Spring Boot.',
+        'Virtualização de ambientes com Docker e otimização de banco de dados PostgreSQL e MongoDB.'
       ],
       skills: ['React', 'TypeScript', 'Java', 'Spring Boot', 'Docker', 'PostgreSQL', 'MongoDB'],
       color: 'orange'
