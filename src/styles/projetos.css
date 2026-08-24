@@ -1,0 +1,175 @@
+/* Projetos — cards de código aberto, sem imagem: o conteúdo é a decisão técnica */
+
+.projetos__header {
+  margin-bottom: 3rem;
+  max-width: 42rem;
+}
+
+.projetos__eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent-purple);
+  margin-bottom: 0.75rem;
+}
+
+.projetos__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.projetos__description {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.projetos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .projetos__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .projetos__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.projetos--in-view .projeto-card:nth-child(1) { transition-delay: 0ms; }
+.projetos--in-view .projeto-card:nth-child(2) { transition-delay: 60ms; }
+.projetos--in-view .projeto-card:nth-child(3) { transition-delay: 120ms; }
+.projetos--in-view .projeto-card:nth-child(4) { transition-delay: 180ms; }
+.projetos--in-view .projeto-card:nth-child(5) { transition-delay: 240ms; }
+.projetos--in-view .projeto-card:nth-child(6) { transition-delay: 300ms; }
+
+/* Card */
+.projeto-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.5rem 1.375rem;
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out,
+    box-shadow 0.25s ease,
+    border-color 0.2s ease;
+}
+
+.projetos--in-view .projeto-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .projetos--in-view .projeto-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(140, 82, 255, 0.28);
+  }
+}
+
+.projetos--reduced-motion .projeto-card {
+  opacity: 1;
+  transform: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Nome do repositório */
+.projeto-card__repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  margin: 0;
+  word-break: break-word;
+}
+
+.projeto-card__subtitle {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  margin: 0.5rem 0 0.625rem;
+}
+
+.projeto-card__desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1.125rem;
+}
+
+.projeto-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.125rem;
+}
+
+.projeto-card__chip {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.projeto-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.projeto-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-accent-purple);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.projeto-card__link:hover {
+  border-bottom-color: var(--color-accent-purple);
+}
+
+.projeto-card__link:focus-visible {
+  outline: 2px solid var(--color-accent-purple);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

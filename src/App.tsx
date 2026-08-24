@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Icon } from '@iconify/react';
 import HomeSection from './components/sections/HomeSection';
 import SobreSection from './components/sections/SobreSection';
+import ProjetosSection from './components/sections/ProjetosSection';
 import PortfolioSection from './components/sections/PortfolioSection';
 import ServicosSection from './components/sections/ServicosSection';
 import DepoimentosSection from './components/sections/DepoimentosSection';
@@ -109,8 +110,9 @@ function App() {
       <Navbar />
       <HomeSection />
       <ServicosSection />
-      <SobreSection />
+      <ProjetosSection />
       <PortfolioSection />
+      <SobreSection />
       <DepoimentosSection />
       <ContatoSection />
       <WhatsAppButton />
