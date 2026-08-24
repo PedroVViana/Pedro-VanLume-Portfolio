@@ -1,18 +1,25 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
+import { Github, Linkedin } from 'lucide-react';
 import { ProjectButton } from '@/components/ui/project-button';
-import { GetStartedButton } from '@/components/ui/get-started-button';
+import { DownloadButton } from '@/components/ui/download-button';
 import { GlowyWavesBg } from '@/components/ui/glowy-waves-bg';
 import LocationBadge from '@/components/ui/LocationBadge';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
-import { Layers, Briefcase, Zap, TrendingUp } from 'lucide-react';
+import { Users, Activity, Layers, Briefcase } from 'lucide-react';
+import resumeFile from '@/assets/resume-Pedro-Vanlume.pdf';
 
 const metrics = [
-  { icon: Layers, label: 'Projetos Desenvolvidos', value: '+100', color: 'blue' },
-  { icon: Briefcase, label: 'Anos de Experiência', value: '+4 Anos', color: 'purple' },
-  { icon: TrendingUp, label: 'Receita Impulsionada', value: '+R$ 500k', color: 'blue' },
-  { icon: Zap, label: 'Tecnologias Dominadas', value: '15+', color: 'purple' },
+  { icon: Users, label: 'usuários atendidos em sistema industrial', value: '5.000+', color: 'blue' },
+  { icon: Activity, label: 'sessões simultâneas em pico', value: '500', color: 'purple' },
+  { icon: Layers, label: 'módulos do sistema, 15+ construídos do zero', value: '20 de 22', color: 'blue' },
+  { icon: Briefcase, label: 'construindo aplicações em produção', value: '5 anos', color: 'purple' },
+];
+
+const socialLinks = [
+  { icon: Github, label: 'GitHub', url: 'https://github.com/PedroVViana' },
+  { icon: Linkedin, label: 'LinkedIn', url: 'https://www.linkedin.com/in/pedro-vanlume-0230551b9/' },
 ];
 
 const HomeSection: React.FC = () => {
@@ -67,33 +74,34 @@ const HomeSection: React.FC = () => {
             animate="visible"
           >
             {/* Bloco Superior de Contexto */}
-            <motion.div variants={itemVariants} className="flex flex-col items-center gap-4 mb-14">
+            <motion.div variants={itemVariants} className="flex flex-col items-center gap-4 mb-10">
               <LocationBadge />
-              <div className="flex flex-col items-center">
-                <span className="text-apple-accent-purple font-bold text-[11px] sm:text-[12px] tracking-[0.4em] uppercase">
-                  Portfólio Pessoal · Pedro Van-Lume
-                </span>
-                <div className="h-[1.5px] w-10 bg-apple-accent-blue/20 mt-3" />
-              </div>
             </motion.div>
 
-            {/* Headline */}
+            {/* Nome */}
             <motion.h1
               variants={itemVariants}
-              className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-apple-text-primary tracking-tight leading-[0.95] mb-8"
+              className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-apple-text-primary tracking-tight leading-[0.95] mb-5"
             >
-              Transformando ideias <br />
-              <span className="text-apple-accent-purple">em produtos digitais</span> <br />
-              bem construídos.
+              Pedro Van-Lume
             </motion.h1>
 
-            {/* Subheadline */}
+            {/* Cargo */}
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl md:text-2xl text-apple-text-secondary leading-relaxed max-w-2xl mb-12 font-medium"
+              className="text-base sm:text-lg md:text-xl font-semibold text-apple-accent-purple mb-8"
             >
-              Desenvolvedor Front-end e Engenheiro de IA especializado em sistemas web, automações, e-commerces e produtos digitais orientados a resultado.
-              {' '}Projetos que já contribuíram para mais de R$ 500 mil em receita, incluindo cases com até 25x de retorno sobre investimento em mídia.
+              Desenvolvedor Front-end · React, TypeScript e Next.js
+            </motion.p>
+
+            {/* Texto */}
+            <motion.p
+              variants={itemVariants}
+              className="text-lg sm:text-xl text-apple-text-secondary leading-relaxed max-w-2xl mb-12 font-medium"
+            >
+              Construo interfaces para produtos que precisam funcionar todo dia, não só no dia do deploy.
+              No último ano respondi pelo front-end de um sistema de engenharia industrial usado por mais de
+              5.000 pessoas em refinarias e plataformas de petróleo.
             </motion.p>
 
             {/* CTAs */}
@@ -101,17 +109,37 @@ const HomeSection: React.FC = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 relative z-[100]"
             >
-              <ProjectButton onClick={() => scrollToSection('portfolio')} />
-              <GetStartedButton
-                text="Solicitar Orçamento"
-                onClick={() => scrollToSection('contato')}
+              <ProjectButton text="Ver projetos" onClick={() => scrollToSection('projetos')} />
+              <DownloadButton
+                text="Baixar currículo"
+                href={resumeFile}
+                downloadName="curriculo-pedro-van-lume.pdf"
               />
+            </motion.div>
+
+            {/* Links sociais */}
+            <motion.div
+              variants={itemVariants}
+              className="flex items-center justify-center gap-6 mt-8 relative z-[100]"
+            >
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-apple-text-secondary hover:text-apple-accent-purple transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-apple-accent-purple focus-visible:ring-offset-2 rounded"
+                >
+                  <social.icon size={18} aria-hidden="true" />
+                  <span>{social.label}</span>
+                </a>
+              ))}
             </motion.div>
 
             {/* Metrics cards */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full max-w-2xl mt-10 relative z-[100]"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full max-w-3xl mt-12 relative z-[100]"
             >
               {metrics.map((item, idx) => (
                 <div
@@ -124,12 +152,12 @@ const HomeSection: React.FC = () => {
                         : 'bg-[var(--color-accent-purple)]/10 text-[var(--color-accent-purple)]'
                       }`}
                   >
-                    <item.icon size={14} />
+                    <item.icon size={14} aria-hidden="true" />
                   </div>
                   <span className="text-lg sm:text-xl font-bold text-[var(--color-text-primary)] leading-none">
                     {item.value}
                   </span>
-                  <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)] text-center leading-tight">
+                  <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)] text-center leading-tight text-balance">
                     {item.label}
                   </span>
                 </div>
