@@ -115,6 +115,11 @@
 .portfolio--in-view .portfolio__grid .portfolio-card:nth-child(5) { transition-delay: 200ms; }
 .portfolio--in-view .portfolio__grid .portfolio-card:nth-child(6) { transition-delay: 250ms; }
 .portfolio--in-view .portfolio__grid .portfolio-card:nth-child(7) { transition-delay: 300ms; }
+.portfolio--in-view .portfolio__grid .portfolio-card:nth-child(8) { transition-delay: 350ms; }
+.portfolio--in-view .portfolio__grid .portfolio-card:nth-child(9) { transition-delay: 400ms; }
+.portfolio--in-view .portfolio__grid .portfolio-card:nth-child(10) { transition-delay: 450ms; }
+.portfolio--in-view .portfolio__grid .portfolio-card:nth-child(11) { transition-delay: 500ms; }
+.portfolio--in-view .portfolio__grid .portfolio-card:nth-child(12) { transition-delay: 550ms; }
 
 /* Card — estilo alinhado ao restante da página */
 .portfolio-card {

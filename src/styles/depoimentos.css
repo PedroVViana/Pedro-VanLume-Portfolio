@@ -1,8 +1,8 @@
-/* Depoimentos Section — cards com aspas, animação de entrada */
+/* Depoimentos Section — cards visuais apenas com imagens e lightbox */
 
 .depoimentos__header {
   margin-bottom: 3rem;
-  max-width: 42rem;
+  max-width: 44rem;
 }
 
 .depoimentos__eyebrow {
@@ -35,9 +35,16 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .depoimentos__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .depoimentos__grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 }
@@ -46,8 +53,11 @@
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 2rem 1.75rem;
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
   opacity: 0;
   transform: translateY(20px);
   transition:
@@ -64,34 +74,74 @@
 
 .depoimentos__card:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(140, 82, 255, 0.4);
+  transform: translateY(-3px);
 }
 
-.depoimentos__card-quote {
-  margin-bottom: 1.25rem;
-  opacity: 0.9;
+.depoimentos__card:focus-visible {
+  outline: 2px solid var(--color-accent-purple);
+  outline-offset: 2px;
 }
 
-.depoimentos__card-text {
-  font-size: 1rem;
-  line-height: 1.65;
+/* Imagem e Preview */
+.depoimentos__card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.depoimentos__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.depoimentos__card:hover .depoimentos__card-img {
+  transform: scale(1.04);
+}
+
+/* Hover Overlay com botão de zoom */
+.depoimentos__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.depoimentos__card:hover .depoimentos__card-overlay {
+  opacity: 1;
+}
+
+.depoimentos__card-zoom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
   color: var(--color-text-primary);
-  margin: 0 0 1.5rem;
-  font-style: normal;
-}
-
-.depoimentos__card-footer {
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.depoimentos__card-cite {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-style: normal;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(4px);
+  transition: transform 0.25s ease;
+}
+
+.depoimentos__card:hover .depoimentos__card-zoom-btn {
+  transform: translateY(0);
 }
 
 /* Reduced motion */
@@ -102,7 +152,16 @@
 }
 
 .depoimentos--reduced-motion .depoimentos__card:hover {
+  transform: none;
   box-shadow: var(--shadow-sm);
+}
+
+.depoimentos--reduced-motion .depoimentos__card .depoimentos__card-img {
+  transition: none;
+}
+
+.depoimentos--reduced-motion .depoimentos__card:hover .depoimentos__card-img {
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

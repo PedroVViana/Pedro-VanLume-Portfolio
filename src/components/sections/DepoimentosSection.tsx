@@ -1,34 +1,51 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Quote } from 'lucide-react';
+import { ZoomIn, X } from 'lucide-react';
 import Section from '../ui/Section';
 import Container from '../ui/Container';
 
-interface Testimonial {
+import feedback4Image from '../../assets/feedback4.jpeg';
+import feedback5Image from '../../assets/feedback5.jpeg';
+import feedback6Image from '../../assets/feedback6.jpeg';
+import resultado126kImage from '../../assets/126k.jpg';
+import resultado11kImage from '../../assets/11k.png';
+import tenisImage from '../../assets/tenis.jpeg';
+
+interface FeedbackItem {
   id: number;
-  text: string;
-  subtitle: string;
+  image: string;
+  alt: string;
 }
 
-const testimonials: Testimonial[] = [
+const feedbackItems: FeedbackItem[] = [
   {
     id: 1,
-    text: 'Funcional demais. No primeiro mês já vendemos R$ 11 mil e hoje, mesmo sem rodar anúncios, o sistema ainda rende cerca de R$ 1.200 mensais no automático. Tá show!',
-    subtitle: 'Designer Profissional',
+    image: resultado126kImage,
+    alt: 'Resultado financeiro e retorno do projeto',
   },
   {
     id: 2,
-    text: 'Precisávamos elevar o nível da nossa presença digital. O Pedro entregou uma plataforma que transmite a autoridade e o profissionalismo que a nossa marca exige. O impacto na confiança dos novos clientes foi imediato.',
-    subtitle: 'Founder, Academia de Tênis',
+    image: resultado11kImage,
+    alt: 'Faturamento e recorrência de vendas',
   },
   {
     id: 3,
-    text: 'O Pedro demonstra um domínio técnico excepcional e uma capacidade rara de traduzir requisitos complexos de engenharia em software funcional, escalável e ágil.',
-    subtitle: 'Tech Lead, Engeman',
+    image: tenisImage,
+    alt: 'Feedback de cliente e autoridade de marca',
   },
   {
     id: 4,
-    text: 'Investi na solução de análise de dados e o retorno foi claro. A clareza que o software traz para as métricas de escala é um diferencial competitivo enorme para quem gere orçamentos altos.',
-    subtitle: 'Gestor de Tráfego e Performance',
+    image: feedback4Image,
+    alt: 'Feedback de entrega do projeto',
+  },
+  {
+    id: 5,
+    image: feedback5Image,
+    alt: 'Feedback de suporte e agilidade',
+  },
+  {
+    id: 6,
+    image: feedback6Image,
+    alt: 'Feedback de satisfação e recomendação',
   },
 ];
 
@@ -36,6 +53,7 @@ const DepoimentosSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [activeImage, setActiveImage] = useState<FeedbackItem | null>(null);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -62,6 +80,25 @@ const DepoimentosSection: React.FC = () => {
     return () => observer.disconnect();
   }, [reducedMotion]);
 
+  // Fechar lightbox com tecla Escape
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveImage(null);
+      }
+    };
+    if (activeImage) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeImage]);
+
   return (
     <Section id="depoimentos" className="bg-[var(--color-bg-primary)]">
       <Container>
@@ -70,15 +107,15 @@ const DepoimentosSection: React.FC = () => {
           className={`depoimentos ${inView ? 'depoimentos--in-view' : ''} ${reducedMotion ? 'depoimentos--reduced-motion' : ''}`}
         >
           <header className="depoimentos__header">
-            <p className="depoimentos__eyebrow">PROVA SOCIAL</p>
+            <p className="depoimentos__eyebrow">PROVA SOCIAL & RESULTADOS</p>
             <h2 className="depoimentos__title">O que dizem sobre trabalhar comigo</h2>
             <p className="depoimentos__description">
-              Resultados reais em lucro, autoridade de marca e competência técnica.
+              Depoimentos reais, métricas alcançadas e comprovações de impacto gerado para clientes e parceiros.
             </p>
           </header>
 
           <div className="depoimentos__grid">
-            {testimonials.map((item, index) => (
+            {feedbackItems.map((item, index) => (
               <article
                 key={item.id}
                 className="depoimentos__card"
@@ -87,24 +124,70 @@ const DepoimentosSection: React.FC = () => {
                     ? { transitionDelay: `${index * 80}ms` }
                     : undefined
                 }
+                onClick={() => setActiveImage(item)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActiveImage(item);
+                  }
+                }}
+                aria-label={`Visualizar feedback ${item.id} em tamanho real`}
               >
-                <div className="depoimentos__card-quote">
-                  <Quote
-                    size={28}
-                    strokeWidth={1.2}
-                    className="text-[var(--color-accent-purple)]"
-                    aria-hidden
+                <div className="depoimentos__card-img-wrap">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="depoimentos__card-img"
+                    loading="lazy"
                   />
+                  <div className="depoimentos__card-overlay">
+                    <span className="depoimentos__card-zoom-btn">
+                      <ZoomIn size={18} aria-hidden />
+                      <span>Ampliar</span>
+                    </span>
+                  </div>
                 </div>
-                <blockquote className="depoimentos__card-text">{item.text}</blockquote>
-                <footer className="depoimentos__card-footer">
-                  <cite className="depoimentos__card-cite">{item.subtitle}</cite>
-                </footer>
               </article>
             ))}
           </div>
         </div>
       </Container>
+
+      {/* Modal Lightbox para visualização em alta resolução */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 z-[200] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 animate-fadeIn"
+          onClick={() => setActiveImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Visualização em alta resolução"
+        >
+          <button
+            type="button"
+            className="fixed top-5 right-5 z-[210] p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveImage(null);
+            }}
+            aria-label="Fechar visualização"
+          >
+            <X size={24} />
+          </button>
+
+          <div
+            className="relative max-w-4xl max-h-[90vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={activeImage.image}
+              alt={activeImage.alt}
+              className="max-h-[85vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border border-white/10"
+            />
+          </div>
+        </div>
+      )}
     </Section>
   );
 };

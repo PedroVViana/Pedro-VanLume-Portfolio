@@ -1,18 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Section from '../ui/Section';
 import Container from '../ui/Container';
-import finelyPlannedImage from '../../assets/finely-planned.png';
 import homenzcolatinaImage from '../../assets/homenz.png';
-import textoMaestroImage from '../../assets/textoMaestro.png';
-import levepromedicoImage from '../../assets/levepromedico.png';
+import finAppImage from '../../assets/finapp.jpg';
 import metaAdsImage from '../../assets/meta-ads.png';
+import EasyPack from '../../assets/EasyPack.png';
 import tempoCertoImage from '../../assets/tempoCerto.png';
-import cvInsignesImage from '../../assets/cvInsignes.png';
-import clinicaFluxoImage from '../../assets/clinicafluxo.png';
 import borgesAcademyImage from '../../assets/borgesAcademy.png';
 import consorcioDaVezImage from '../../assets/consorcioDaVez.png';
-import vanlumetrafegoImage from '../../assets/vanlumetrafego.png';
-import templateImobiliariaImage from '../../assets/templateImobiliaria.png';
+import afetivaImage from '../../assets/afetiva.jpg';
 
 interface PortfolioItem {
   id: number;
@@ -44,19 +40,6 @@ Resultado: Mais de R$ 126k faturados com 25x de retorno sobre investimento em m�
   },
   {
     id: 2,
-    title: 'LeveProMedico',
-    description: `Objetivo: Centralizar a operação de clínicas médicas com prontuário eletrônico e agendamento.
-Desafio: Garantir alta disponibilidade, segurança de dados sensíveis e interface intuitiva para médicos e secretários.
-Atuação: Engenharia de front-end, arquitetura de estado com Redux e integração de APIs.
-Resultado: Redução de 40% no tempo operacional de agendamento e prontuários digitais seguros em produção.`,
-    badge: '🏢 SISTEMA CORPORATIVO',
-    technologies: ['React', 'Node.js', 'Docker', 'Redux', 'TypeScript'],
-    image: levepromedicoImage,
-    projectUrl: 'https://levepromedico.com.br/assinar/',
-    category: 'sistema',
-  },
-  {
-    id: 3,
     title: 'Meta Ads Insights — Dashboard de BI',
     description: `Objetivo: Facilitar a tomada de decisão em tráfego pago através de relatórios em tempo real.
 Desafio: Processar e renderizar grandes volumes de dados de campanhas sem perda de performance.
@@ -69,29 +52,13 @@ Resultado: Aumento de 30% na velocidade de análise de métricas por equipes de 
     category: 'sistema',
   },
   {
-    id: 4,
-    title: 'Finely Planned — Planejamento Financeiro',
-    description: `Objetivo: Proporcionar controle financeiro claro e prático para gestão de orçamentos e gastos.
-Desafio: Sincronização em tempo real e cálculos de balanços dinâmicos e precisos.
-Atuação: Desenvolvimento completo do app, modelagem do banco Firebase e gerenciamento de estado global.
-Resultado: Interface intuitiva que reduziu erros de lançamentos financeiros manuais de usuários ativos.`,
+    id: 3,
+    title: 'FinApp - Plataforma de gestão e planejamento financeiro',
+    description: `O FinApp é um sistema web moderno de controle financeiro e planejamento patrimonial, projetado para transformar dados brutos em decisões financeiras estratégicas em tempo real. A plataforma centraliza a gestão de receitas, despesas fixas e variáveis, projeção de saldo e acompanhamento detalhado de metas e orçamentos mensais.`,
     badge: '🏢 SISTEMA CORPORATIVO',
     technologies: ['React', 'Vite', 'TypeScript', 'Firebase', 'Redux'],
-    image: finelyPlannedImage,
-    projectUrl: 'https://finely-planned.vercel.app/',
-    category: 'sistema',
-  },
-  {
-    id: 5,
-    title: 'Texto Maestro',
-    description: `Objetivo: Escalar a produção de conteúdo com refinamento gramatical e estilístico via inteligência artificial.
-Desafio: Integrar a API do GPT garantindo respostas rápidas, streaming de texto e experiência de escrita fluida.
-Atuação: Engenharia de prompts, integração de LLM e criação de editor de texto dinâmico.
-Resultado: Redução de 60% no tempo de revisão e edição de posts de blogs e newsletters.`,
-    badge: '🤖 IA & SAAS',
-    technologies: ['Next.js', 'OpenAI API', 'Tailwind CSS', 'TypeScript'],
-    image: textoMaestroImage,
-    projectUrl: 'https://texto-maestro.vercel.app/',
+    image: finAppImage,
+    projectUrl: 'https://fin-app-two.vercel.app/login',
     category: 'sistema',
   },
   {
@@ -106,32 +73,6 @@ Resultado: Alta taxa de adesão diária de usuários e engajamento constante nos
     image: tempoCertoImage,
     projectUrl: 'https://tempo-certo-wine.vercel.app/login',
     category: 'sistema',
-  },
-  {
-    id: 7,
-    title: 'CV-Insignes',
-    description: `Objetivo: Automatizar a triagem de candidatos por meio de inteligência artificial.
-Desafio: Processar currículos em PDF de diversos layouts e realizar matching inteligente com as vagas.
-Atuação: Integração de modelos generativos de IA, front-end dinâmico e tratamento de dados complexos.
-Resultado: Redução de 80% no tempo gasto em triagem inicial de candidatos por equipes de RH.`,
-    badge: '🤖 IA & SAAS',
-    technologies: ['Next.js', 'React', 'TypeScript', 'IA Generativa', 'Tailwind'],
-    image: cvInsignesImage,
-    projectUrl: 'https://cv-insights.vercel.app/',
-    category: 'sistema',
-  },
-  {
-    id: 8,
-    title: 'Clínica Fluxo',
-    description: `Objetivo: Elevar o posicionamento de marca de uma clínica de fisioterapia e gerar novos agendamentos.
-Desafio: Criar uma experiência visual premium com carregamento instantâneo.
-Atuação: Otimização de conversão, animações de micro-interações fluidas com GSAP e SEO técnico.
-Resultado: Aumento de 35% nos cliques de contato para agendamentos via busca orgânica no Google.`,
-    badge: '📈 CONVERSÃO',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'SEO', 'GSAP'],
-    image: clinicaFluxoImage,
-    projectUrl: 'https://clinica-fluxo-de-fisioterapia-premi.vercel.app/',
-    category: 'site',
   },
   {
     id: 9,
@@ -161,28 +102,22 @@ Resultado: Aumento no envio de simulações qualificadas em relação à página
   },
   {
     id: 11,
-    title: 'Vanlume Tráfego',
-    description: `Objetivo: Vender templates n8n de automação de tráfego pago.
-Desafio: Demonstrar o funcionamento e valor das automações em uma única página de vendas.
-Atuação: Criação da landing page, copy focada em ganho de produtividade e checkout integrado.
-Resultado: Vendas automatizadas e validação de produto digital com zero fricção de atendimento.`,
+    title: 'EasyPack',
+    description: `Projeto com objetivo de vender um pack de PSD de artes de photoshop, o projeto foi entregue a 2 anos atras e o resultado obtido pelo dono foi de RS11.000 no primeiro mês e durante os dois anos ele teve uma recorrencia de R$1.200 sem investir em trafego.`,
     badge: '⚡ AUTOMAÇÃO',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
-    image: vanlumetrafegoImage,
-    projectUrl: 'https://vanlumetrafego.com.br/',
+    image: EasyPack,
+    projectUrl: '',
     category: 'site',
   },
   {
     id: 12,
-    title: 'Template de Agência Imobiliária',
-    description: `Objetivo: Atrair interessados em compra e avaliação de imóveis de alto padrão.
-Desafio: Organizar a curadoria de fotos pesadas sem comprometer a performance e velocidade de carregamento.
-Atuação: Desenvolvimento e otimização de imagens, micro-animações premium e formulários orientados.
-Resultado: Carregamento em menos de 1.5s e excelente usabilidade móvel.`,
+    title: 'Landing Page da Empresa Afetiva',
+    description: `Projeto desenvolvido para transformar a presença digital da clínica, conectando a psicóloga a novos pacientes por meio de uma experiência moderna e acolhedora.`,
     badge: '📈 CONVERSÃO',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Framer Motion', 'GSAP', 'ScrollTrigger'],
-    image: templateImobiliariaImage,
-    projectUrl: 'https://agencia-imobiliaria.vercel.app/',
+    image: afetivaImage,
+    projectUrl: 'https://afetivamultidisciplinar.com.br/',
     category: 'site',
   },
 ];
@@ -238,7 +173,6 @@ const PortfolioSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<'sistemas' | 'sites'>('sites');
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -265,11 +199,6 @@ const PortfolioSection: React.FC = () => {
     return () => observer.disconnect();
   }, [reducedMotion]);
 
-  const filteredData =
-    activeCategory === 'sistemas'
-      ? portfolioData.filter((p) => p.category === 'sistema')
-      : portfolioData.filter((p) => p.category === 'site');
-
   return (
     <Section id="portfolio" className="bg-[var(--color-bg-primary)]">
       <Container>
@@ -283,49 +212,15 @@ const PortfolioSection: React.FC = () => {
             <p className="portfolio__description">{SECTION_DESCRIPTION}</p>
           </header>
 
-          <nav
-            className="portfolio__menu"
-            role="tablist"
-            aria-label="Filtrar portfólio por tipo"
-          >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeCategory === 'sistemas'}
-              aria-controls="portfolio-panel-sistemas"
-              id="portfolio-tab-sistemas"
-              className={`portfolio__menu-btn ${activeCategory === 'sistemas' ? 'portfolio__menu-btn--active' : ''}`}
-              onClick={() => setActiveCategory('sistemas')}
-            >
-              Sistemas
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeCategory === 'sites'}
-              aria-controls="portfolio-panel-sites"
-              id="portfolio-tab-sites"
-              className={`portfolio__menu-btn ${activeCategory === 'sites' ? 'portfolio__menu-btn--active' : ''}`}
-              onClick={() => setActiveCategory('sites')}
-            >
-              Sites
-            </button>
-          </nav>
-
-          <div
-            id={activeCategory === 'sistemas' ? 'portfolio-panel-sistemas' : 'portfolio-panel-sites'}
-            role="tabpanel"
-            aria-labelledby={activeCategory === 'sistemas' ? 'portfolio-tab-sistemas' : 'portfolio-tab-sites'}
-            className="portfolio__cards"
-          >
-            {filteredData.length > 0 ? (
+          <div className="portfolio__cards">
+            {portfolioData.length > 0 ? (
               <div className="portfolio__grid">
-                {filteredData.map((item) => (
+                {portfolioData.map((item) => (
                   <PortfolioCard key={item.id} item={item} />
                 ))}
               </div>
             ) : (
-              <p className="portfolio__empty">Nenhum projeto nesta categoria.</p>
+              <p className="portfolio__empty">Nenhum projeto cadastrado.</p>
             )}
           </div>
         </div>
