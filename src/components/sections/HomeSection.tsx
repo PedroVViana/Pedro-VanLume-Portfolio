@@ -70,7 +70,7 @@ const HomeSection: React.FC = () => {
           <motion.div
             className="max-w-4xl w-full flex flex-col items-center text-center"
             variants={containerVariants}
-            initial="hidden"
+            initial={false}
             animate="visible"
           >
             {/* Bloco Superior de Contexto */}

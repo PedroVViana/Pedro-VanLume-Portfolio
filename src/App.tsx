@@ -8,6 +8,7 @@ import PortfolioSection from './components/sections/PortfolioSection';
 import ServicosSection from './components/sections/ServicosSection';
 import DepoimentosSection from './components/sections/DepoimentosSection';
 import ContatoSection from './components/sections/ContatoSection';
+import AgentBuild from './components/ui/AgentBuild';
 
 function ScrollProgressBar() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -116,6 +117,7 @@ function App() {
       <DepoimentosSection />
       <ContatoSection />
       <WhatsAppButton />
+      <AgentBuild />
     </div>
   );
 }

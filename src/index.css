@@ -3,6 +3,7 @@
 @import './styles/projetos.css';
 @import './styles/portfolio.css';
 @import './styles/depoimentos.css';
+@import './styles/agent-build.css';
 
 @tailwind base;
 @tailwind components;
